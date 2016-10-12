@@ -84,15 +84,47 @@
 
 
 
-<meta name="description" content="Where there is a will, there is a way.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="dyygs的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="8:30-9:00
+学习同事工作报告
+9:00-9:15
+小组会议
+9:30-9:50
+Mou
+OverviewMou, the missing Markdown editor for web developers.
+SyntaxStrong and Emphasizestrong or strong ( Cmd + B )
+emphasize or emphasize ( Cmd + I )
+S">
+<meta property="og:type" content="article">
+<meta property="og:title" content="blog2">
+<meta property="og:url" content="http://yoursite.com/2016/03/31/mou/index.html">
 <meta property="og:site_name" content="dyygs的博客">
-<meta property="og:description" content="Where there is a will, there is a way.">
+<meta property="og:description" content="8:30-9:00
+学习同事工作报告
+9:00-9:15
+小组会议
+9:30-9:50
+Mou
+OverviewMou, the missing Markdown editor for web developers.
+SyntaxStrong and Emphasizestrong or strong ( Cmd + B )
+emphasize or emphasize ( Cmd + I )
+S">
+<meta property="og:image" content="http://25.io/mou/Mou_128.png">
+<meta property="og:image" content="http://25.io/smaller/favicon.ico">
+<meta property="og:image" content="http://resizesafari.com/favicon.ico">
+<meta property="og:updated_time" content="2016-10-12T02:24:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="dyygs的博客">
-<meta name="twitter:description" content="Where there is a will, there is a way.">
+<meta name="twitter:title" content="blog2">
+<meta name="twitter:description" content="8:30-9:00
+学习同事工作报告
+9:00-9:15
+小组会议
+9:30-9:50
+Mou
+OverviewMou, the missing Markdown editor for web developers.
+SyntaxStrong and Emphasizestrong or strong ( Cmd + B )
+emphasize or emphasize ( Cmd + I )
+S">
+<meta name="twitter:image" content="http://25.io/mou/Mou_128.png">
 
 
 
@@ -113,9 +145,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/03/31/mou/"/>
 
-  <title> dyygs的博客 </title>
+  <title> blog2 | dyygs的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,9 +168,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -205,9 +235,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -227,128 +257,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/09/22/hello-world/" itemprop="url">
-                  Welcome to dy's blog
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-22T19:08:03+08:00" content="2016-09-22">
-              2016-09-22
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/ios学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">ios学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <!-- toc -->
-<h3 id="闲话"><a href="#闲话" class="headerlink" title="闲话"></a>闲话</h3><p><code>Live Photos</code> 是 iOS 9 的一个新特性，它提供相对于传统照片更生动的展现方式。当用户按下拍照键<br>的时候，照片 APP 会捕捉比传统照片更多的内容，包括声音和更多的帧。当用户浏览这些照片时，他们能与这些照片交互并且回放那些被捕捉的内容，这样让照片看起来更加生动。</p>
-<p>iOS 9.1 提供了与 <code>Live Photos</code> 交互的 API，还可以将这些数据导出，用作分享。新提供的 <code>Photos framework</code> 可以从 <code>PHImageManager</code> 对象中取得 <code>PHLivePhoto</code> 的实例。这个对象可以用来表示 <code>Live Photo</code> 中的数据。你可以使用 <code>PHLivePhotoView</code> 对象来现实 <code>Live Photo</code> 的内容。<code>PHLivePhotoView</code> 用于展示图片，处理用户交互，还有对内容显示的处理。</p>
-<p>你还可以使用 <code>PHAssetResource</code> 来访问 <code>PHLivePhoto</code> 来进行共享操作。你可以使用 <code>PHImageManager</code> 或 <code>UIImagePickerController</code> 来从用户的照片库中请求 <code>PHLivePhoto</code> 对象。如果你还在开发一个 Extension，你还可以使用 <code>NSItemProvider</code> 对象来获取 <code>PHLivePhoto</code> 对象。在接受共享的一方，你可以通过发送过来的文件，来重建 <code>PHLivePhoto</code>对象。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/22/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/31/mou/" itemprop="url">
-                  blog2
-                </a>
+                blog2
               
             
           </h1>
@@ -407,9 +316,7 @@
       
 
       
-        
-          
-            <p>8:30-9:00</p>
+        <p>8:30-9:00</p>
 <p><strong>学习同事工作报告</strong></p>
 <p>9:00-9:15</p>
 <p><strong>小组会议</strong></p>
@@ -595,16 +502,20 @@ var Mou = exactlyTheAppIwant;
 <p>Follow <a href="https://twitter.com/mou" target="_blank" rel="external">@Mou</a> on Twitter for the latest news.</p>
 <p>For feedback, use the menu <code>Help</code> - <code>Send Feedback</code></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -612,19 +523,32 @@ var Mou = exactlyTheAppIwant;
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/22/hello-world/" rel="prev" title="Welcome to dy's blog">
+                Welcome to dy's blog <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -632,6 +556,10 @@ var Mou = exactlyTheAppIwant;
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -651,8 +579,17 @@ var Mou = exactlyTheAppIwant;
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/dhxy.jpg"
@@ -695,6 +632,17 @@ var Mou = exactlyTheAppIwant;
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mou"><span class="nav-number">1.</span> <span class="nav-text">Mou</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview"><span class="nav-number">1.1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Syntax"><span class="nav-number">1.1.1.</span> <span class="nav-text">Syntax</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Strong-and-Emphasize"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Strong and Emphasize</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Blockquotes"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Blockquotes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Links-and-Email"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">Links and Email</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Images"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">Images</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inline-code-and-Block-code"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">Inline code and Block code</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ordered-Lists"><span class="nav-number">1.1.1.6.</span> <span class="nav-text">Ordered Lists</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unordered-Lists"><span class="nav-number">1.1.1.7.</span> <span class="nav-text">Unordered Lists</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hard-Linebreak"><span class="nav-number">1.1.1.8.</span> <span class="nav-text">Hard Linebreak</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Horizontal-Rules"><span class="nav-number">1.1.1.9.</span> <span class="nav-text">Horizontal Rules</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Headers"><span class="nav-number">1.1.1.10.</span> <span class="nav-text">Headers</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#This-is-H1"><span class="nav-number">2.</span> <span class="nav-text">This is H1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#This-is-H2"><span class="nav-number">2.1.</span> <span class="nav-text">This is H2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#This-is-H1-1"><span class="nav-number">3.</span> <span class="nav-text">This is H1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#This-is-H2-1"><span class="nav-number">3.1.</span> <span class="nav-text">This is H2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#This-is-H3"><span class="nav-number">3.1.1.</span> <span class="nav-text">This is H3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#This-is-H4"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">This is H4</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#This-is-H5"><span class="nav-number">3.1.1.1.1.</span> <span class="nav-text">This is H5</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#This-is-H6"><span class="nav-number">3.1.1.1.1.1.</span> <span class="nav-text">This is H6</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Extra-Syntax"><span class="nav-number">3.1.2.</span> <span class="nav-text">Extra Syntax</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Footnotes"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">Footnotes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Strikethrough"><span class="nav-number">3.1.2.2.</span> <span class="nav-text">Strikethrough</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fenced-Code-Blocks"><span class="nav-number">3.1.2.3.</span> <span class="nav-text">Fenced Code Blocks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tables"><span class="nav-number">3.1.2.4.</span> <span class="nav-text">Tables</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shortcuts"><span class="nav-number">3.1.3.</span> <span class="nav-text">Shortcuts</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#View"><span class="nav-number">3.1.3.1.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Actions"><span class="nav-number">3.1.3.2.</span> <span class="nav-text">Actions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Edit"><span class="nav-number">3.1.3.3.</span> <span class="nav-text">Edit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Post"><span class="nav-number">3.1.3.4.</span> <span class="nav-text">Post</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Export"><span class="nav-number">3.1.3.5.</span> <span class="nav-text">Export</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#And-more"><span class="nav-number">3.1.4.</span> <span class="nav-text">And more?</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -798,6 +746,10 @@ var Mou = exactlyTheAppIwant;
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
