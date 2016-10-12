@@ -311,153 +311,124 @@
       
         
           
-            <p>一、基本属性</p>
-<p>　　1、创建文本输入框</p>
-<pre><code>UITextField*textField=[[UITextField alloc]initWithFrame:CGRectMake(10, 10, 200, 20)];
-</code></pre><p>　　2、设置边框样式</p>
-<p>　　textField.borderStyle = UITextBorderStyleRoundedRect;//圆角</p>
-<p>　　可选属性：</p>
-<pre><code>UITextBorderStyleNone,无边框
-
-UITextBorderStyleLine,有边框
-
-UITextBorderStyleBezel,有边框和阴影
-
-UITextBorderStyleRoundedRect圆角
-</code></pre><p>　　3、设置背景颜色</p>
-<p>　　textField.backgroundColor = [UIColor blueColor];</p>
-<p>　　4、设置背景图片</p>
-<p>　　textField.background=[UIImage imageNamed:@”test.png”];</p>
-<p>　　5、提示文字</p>
-<p>　　textField.placeholder = @”请输入”;</p>
-<p>　　6、设置和读取文字内容</p>
-<p>　　textField.text = @”hello”;</p>
-<p>　　NSString * str = textField.text;</p>
-<p>　　7、设置字体</p>
-<p>　　[textField setFont:[UIFont fontWithName:@”Arial” size:30]];</p>
-<p>　　NSLog(@”%@”, [UIFont familyNames]); 查看字体集</p>
-<p>　　</p>
-<p>　　8、密文输入</p>
-<p>　　textField.secureTextEntry = YES; </p>
-<p>　　9、键盘类型</p>
-<p>　　textField.keyboardType = UIKeyboardTypeNumberPad;  数字键</p>
-<p>　　UIKeyboardTypeDefault,                   当前键盘（默认）</p>
-<p>　　UIKeyboardTypeASCIICapable,          字母输入键</p>
-<p>　　UIKeyboardTypeNumbersAndPunctuation,  数字和符号</p>
-<p>　　UIKeyboardTypeURL,                       URL键盘</p>
-<p>　　UIKeyboardTypeNumberPad,             数字键盘</p>
-<p>　　UIKeyboardTypePhonePad,               电话号码输入键盘   </p>
-<p>　　UIKeyboardTypeEmailAddress,          邮件地址输入键盘           </p>
-<p>　　10、键盘风格</p>
-<p>　　textView.keyboardAppearance=UIKeyboardAppearanceDefault；</p>
-<p>　　可选属性</p>
-<p>　　UIKeyboardAppearanceDefault， 默认外观，浅灰色</p>
-<p>　　UIKeyboardAppearanceAlert，     深灰 石墨色</p>
-<p>　　11、设置自定义键盘</p>
-<p>　　UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0,0,320.300)];</p>
-<p>　　//位置和宽由系统决定。</p>
-<p>　　textField.inputView = customView ;</p>
-<p> 　  inputAccessoryView 设置系统键盘或自定义键盘上的视图</p>
-<p>　　12、设置左右视图</p>
-<p>　　UITextField 可以直接设置 leftView 或 rightView, 文本输入区域就在 leftView 和 rightView 之间。</p>
-<p>　　textField.leftView = leftview;</p>
-<p>　　textField.leftViewMode = UITextFieldViewModeAlways;</p>
-<p>　　右视图rightView也是一样，Mode有四种</p>
-<pre><code>UITextFieldViewModeNever, 从不出现
-
-UITextFieldViewModeWhileEditing 编辑时显示
-
-UITextFieldViewModeUnlessEditing 不编辑时显示
-
-UITextFieldViewModeAlways  总是显示  
-</code></pre><p>　　13、设置清除按钮显示模式</p>
-<pre><code>textField.clearButtonMode = UITextFieldViewModeAlways;
-</code></pre><p>　　Mode同左右视图的mode一样。</p>
-<p>　　14、再次编辑时是否清空之前内容；默认NO</p>
-<p>　　textField.clearsOnBeginEditing = YES</p>
-<p>　　15、对齐方式</p>
-<p>　　垂直对齐：</p>
-<p>　　textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter </p>
-<p>可选属性：</p>
-<p>UIControlContentVerticalAlignmentCenter  居中对齐</p>
-<p>UIControlContentVerticalAlignmentTop    顶部对齐，默认是顶部对齐</p>
-<p>UIControlContentVerticalAlignmentBottom 底部对齐</p>
-<p>UIControlContentVerticalAlignmentFill    完全填充</p>
-<p>水平对齐：</p>
-<p>textField.textAlignment = UITextAlignmentCenter;</p>
-<p>可选属性：</p>
-<p>UITextAlignmentLeft，左对齐，默认是左对齐</p>
-<p>UITextAlignmentCenter，</p>
-<p>UITextAlignmentRight，右对齐 </p>
-<p>16、 设置滚动</p>
-<p>textField.font = [UIFont systemFontOfSize:30]; 设置文字大小</p>
-<p>textField.adjustsFontSizeToFitWidth = YES; 默认是NO  YES当充满边框时，文字会缩小，当小到一定程度时仍然会滚动；自适应宽度；</p>
-<p>设置滚动时最小字号，与滚动相关，要比设置的字体小，否则没有意义，没有设置这一项文字也会缩小和滚动</p>
-<p>textField.minimumFontSize = 20; </p>
-<p>17、设置return键</p>
-<p>textField.returnKeyType = UIReturnKeyGoogle;search</p>
-<p>可选属性</p>
-<pre><code>UIReturnKeyDefault, 默认 灰色按钮，标有Return
-
-UIReturnKeyGo,      标有Go的蓝色按钮
-
-UIReturnKeyGoogle,标有Google的蓝色按钮，用语搜索
-
-UIReturnKeyJoin,标有Join的蓝色按钮
-
-UIReturnKeyNext,标有Next的蓝色按钮
-
-UIReturnKeyRoute,标有Route的蓝色按钮
-
-UIReturnKeySearch,标有Search的蓝色按钮
-
-UIReturnKeySend,标有Send的蓝色按钮
-
-UIReturnKeyYahoo,标有Yahoo的蓝色按钮
-
-UIReturnKeyYahoo,标有Yahoo的蓝色按钮
-
-UIReturnKeyEmergencyCall, 紧急呼叫按钮
-</code></pre><p>18、设置输入自动纠正模式</p>
-<p>textField.autocapitalizationType = UITextAutocapitalizationTypeAllCharacters;</p>
-<p>可选属性：</p>
-<pre><code>UITextAutocapitalizationTypeNone, 不自动纠正
-
-UITextAutocapitalizationTypeWords,  单词首字母大写
-
-UITextAutocapitalizationTypeSentences,  句子的首字母大写
-
-UITextAutocapitalizationTypeAllCharacters, 所有字母都大写
-</code></pre><p> 二、文本编辑框代理</p>
-<p>1、是否进入编辑模式</p>
+            <h6 id="设置边框属性"><a href="#设置边框属性" class="headerlink" title="设置边框属性"></a>设置边框属性</h6><pre><code>textField.borderStyle = UITextBorderStyleRoundedRect;
+</code></pre><p>可选属性：</p>
 <ul>
-<li>(BOOL)textFieldShouldBeginEditing:(UITextField *)textField</li>
+<li><p>UITextBorderStyleNone,无边框</p>
+</li>
+<li><p>UITextBorderStyleLine,有边框</p>
+</li>
+<li><p>UITextBorderStyleBezel,有边框和阴影</p>
+</li>
+<li><p>UITextBorderStyleRoundedRect圆角</p>
+</li>
 </ul>
-<p>默认返回YES，进入编辑模式。NO不进入编辑模式</p>
-<p>2、进入编辑模式</p>
+<p>######设置键盘类型</p>
+<pre><code>textField.keyboardType = UIKeyboardTypeNumberPad;  数字键
+</code></pre><p>可选属性：</p>
 <ul>
-<li>(void)textFieldDidBeginEditing:(UITextField *)textField</li>
+<li><p>UIKeyboardTypeDefault,                   当前键盘（默认）</p>
+</li>
+<li><p>UIKeyboardTypeASCIICapable,          字母输入键</p>
+</li>
+<li><p>UIKeyboardTypeNumbersAndPunctuation,  数字和符号</p>
+</li>
+<li><p>UIKeyboardTypeURL,                       URL键盘</p>
+</li>
+<li><p>UIKeyboardTypeNumberPad,             数字键盘</p>
+</li>
+<li><p>UIKeyboardTypePhonePad,               电话号码输入键盘  </p>
+</li>
+<li><p>UIKeyboardTypeEmailAddress,          邮件地址输入键盘</p>
+</li>
 </ul>
-<p>3、是否退出编辑模式</p>
+<p>######键盘风格</p>
+<pre><code>textField.keyboardAppearance=UIKeyboardAppearanceDefault；
+</code></pre><p>可选属性：</p>
 <ul>
-<li>(BOOL)textFieldShouldEndEditing:(UITextField *)textField</li>
+<li><p>UIKeyboardAppearanceDefault， 默认外观，浅灰色</p>
+</li>
+<li><p>UIKeyboardAppearanceAlert，     深灰 石墨色</p>
+</li>
 </ul>
-<p>默认返回YES，退出编辑模式。NO不退出编辑模式</p>
-<p>4、退出编辑模式</p>
+<p>######对齐方式<br>垂直对齐:</p>
+<pre><code>textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+</code></pre><p>可选属性：</p>
 <ul>
-<li>(void)textFieldDidEndEditing:(UITextField *)textField</li>
+<li><p>UIControlContentVerticalAlignmentCenter  居中对齐</p>
+</li>
+<li><p>UIControlContentVerticalAlignmentTop    顶部对齐，默认是顶部对齐</p>
+</li>
+<li><p>UIControlContentVerticalAlignmentBottom 底部对齐</p>
+</li>
+<li><p>UIControlContentVerticalAlignmentFill    完全填充</p>
+</li>
 </ul>
-<p>5、点击清除按钮是否清除</p>
+<p>水平对齐:</p>
+<pre><code>textField.textAlignment = UITextAlignmentCenter;
+</code></pre><p>可选属性：</p>
 <ul>
-<li>(BOOL)textFieldShouldClear:(UITextField *)textField</li>
+<li><p>UITextAlignmentLeft，左对齐，默认是左对齐</p>
+</li>
+<li><p>UITextAlignmentCenter，</p>
+</li>
+<li><p>UITextAlignmentRight，右对齐     </p>
+</li>
 </ul>
-<p>默认返回YES，返回NO不清除</p>
-<p>6、点击键盘上Return按钮时候调用</p>
+<p>######其他属性</p>
+<ol>
+<li>设置自定义键盘 .inputView</li>
+<li>键盘上方视图 .inputAccessoryView</li>
+<li>左右视图 .leftView (UITextFieldViewModeAlways…)</li>
+<li>清除按钮 .clearButtonMode</li>
+<li>再次编辑是否清空 .clearsOnBeginEditing</li>
+<li>设置返回键 .returnKeyType</li>
+<li>设置自动纠正 .autocapitalizationType</li>
+</ol>
+<p>######编辑框代理</p>
 <ul>
-<li>(BOOL)textFieldShouldReturn:(UITextField *)textField</li>
+<li><p>是否进入编辑模式</p>
+<pre><code>- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+
+默认返回YES，进入编辑模式。NO不进入编辑模式
+</code></pre></li>
 </ul>
-<p>7、当输入任何字符时，代理调用该方法</p>
-<p>-(BOOL)textField:(UITextField <em>)field shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString </em>)string</p>
+<ul>
+<li><p>进入编辑模式</p>
+<pre><code>- (void)textFieldDidBeginEditing:(UITextField *)textField
+</code></pre></li>
+</ul>
+<ul>
+<li><p>是否退出编辑模式</p>
+<pre><code>- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+
+默认返回YES，退出编辑模式。NO不退出编辑模式
+</code></pre></li>
+</ul>
+<ul>
+<li><p>退出编辑模式</p>
+<pre><code>- (void)textFieldDidEndEditing:(UITextField *)textField
+</code></pre></li>
+</ul>
+<ul>
+<li><p>点击清除按钮是否清除</p>
+<pre><code>- (BOOL)textFieldShouldClear:(UITextField *)textField
+
+默认返回YES，返回NO不清除
+</code></pre></li>
+</ul>
+<ul>
+<li><p>点击键盘上Return按钮时候调用</p>
+<pre><code>- (BOOL)textFieldShouldReturn:(UITextField *)textField
+</code></pre></li>
+</ul>
+<ul>
+<li><p>当输入任何字符时，代理调用该方法</p>
+<pre><code>-(BOOL)textField:(UITextField *)field shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+
+当输入字符时，代理调用该方法，如果返回YES则这次输入可以成功，如果返回NO，不能输入成功。range表示光标位置，string表示这次输入的字符串。
+</code></pre></li>
+</ul>
 <p>当输入字符时，代理调用该方法，如果返回YES则这次输入可以成功，如果返回NO，不能输入成功。range表示光标位置，string表示这次输入的字符串。</p>
 
           
