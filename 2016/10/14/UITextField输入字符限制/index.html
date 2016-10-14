@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ios," />
 
 
 
@@ -84,16 +84,40 @@
 
 
 
-<meta name="description" content="Where there is a will, there is a way.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="#####题记：
+
+在ios的开发中，总会遇到要对输入的字符长度进行限制，目前网上大多提供的方法都是单纯的对 [textField.text length] 的简单判断，显然这种方法在面对中英文混合的时候并不适用，因为我们想要限制输入20个字符的时候，对应的中文字符应该是10个。
+
+#####处理步骤：
+
+添加监听
+统计已输入字符的length(中文个数 * 2 + 英文字符个数)
+统计在字符长度">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UITextField输入字符限制(中英文混编)">
+<meta property="og:url" content="http://yoursite.com/2016/10/14/UITextField输入字符限制/index.html">
 <meta property="og:site_name" content="dyygs的博客">
-<meta property="og:description" content="Where there is a will, there is a way.">
-<meta property="og:updated_time" content="2016-10-12T03:18:42.000Z">
+<meta property="og:description" content="#####题记：
+
+在ios的开发中，总会遇到要对输入的字符长度进行限制，目前网上大多提供的方法都是单纯的对 [textField.text length] 的简单判断，显然这种方法在面对中英文混合的时候并不适用，因为我们想要限制输入20个字符的时候，对应的中文字符应该是10个。
+
+#####处理步骤：
+
+添加监听
+统计已输入字符的length(中文个数 * 2 + 英文字符个数)
+统计在字符长度">
+<meta property="og:updated_time" content="2016-10-14T08:57:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="Where there is a will, there is a way.">
+<meta name="twitter:title" content="UITextField输入字符限制(中英文混编)">
+<meta name="twitter:description" content="#####题记：
+
+在ios的开发中，总会遇到要对输入的字符长度进行限制，目前网上大多提供的方法都是单纯的对 [textField.text length] 的简单判断，显然这种方法在面对中英文混合的时候并不适用，因为我们想要限制输入20个字符的时候，对应的中文字符应该是10个。
+
+#####处理步骤：
+
+添加监听
+统计已输入字符的length(中文个数 * 2 + 英文字符个数)
+统计在字符长度">
 
 
 
@@ -114,15 +138,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/10/14/UITextField输入字符限制/"/>
 
-  <title>
-  
-
-  
-    标签 | dyygs的博客
-  
-</title>
+  <title> UITextField输入字符限制(中英文混编) | dyygs的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -143,7 +161,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -233,16 +251,172 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            目前共计 1 个标签
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                UITextField输入字符限制(中英文混编)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-14T16:40:45+08:00" content="2016-10-14">
+              2016-10-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ios学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">ios学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
         </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/ios/" style="font-size: 12px; color: #ccc">ios</a>
-        </div>
-      </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#####题记：</p>
+<blockquote>
+<p>在ios的开发中，总会遇到要对输入的字符长度进行限制，目前网上大多提供的方法都是单纯的对 <em>[textField.text length]</em> 的简单判断，显然这种方法在面对中英文混合的时候并不适用，因为我们想要限制输入20个字符的时候，对应的中文字符应该是10个。</p>
+</blockquote>
+<p>#####处理步骤：</p>
+<ul>
+<li>添加监听</li>
+<li>统计已输入字符的length(中文个数 * 2 + 英文字符个数)</li>
+<li>统计在字符长度限制下的maxLength</li>
+<li>对于超过长度的字符串进行截取</li>
+</ul>
+<p>#####示例代码：    </p>
+<pre><code>NSInteger lengthOfChiness = 0, lengthOfEn = 0;
+   NSString *toBeString = textField.text;
+   NSInteger maxLength = 0;
+   for(int i=0; i&lt; [toBeString length];i++){
+       unichar a = [toBeString characterAtIndex:i];
+       //判断是否是中文字符
+       if( a &gt; 0x4e00 &amp;&amp; a &lt; 0x9fff)
+       {
+           //统计中文个数
+           lengthOfChiness += 1;
+       } else {
+           //统计英文个数
+           lengthOfEn +=1;
+       }
+       if ((lengthOfEn + lengthOfChiness * 2) &lt;= 20) {
+           //长度限制下的最大字符个数
+           maxLength = lengthOfEn + lengthOfChiness;
+       } else {
+           textField.text = [textField.text substringToIndex:maxLength];
+           //自定义弹出窗口文字
+           [[iToast makeText:@&quot;超过字符限制&quot;] show];
+       }
+   }
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ios/" rel="tag">#ios</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/13/UIButton/" rel="next" title="UIButton">
+                <i class="fa fa-chevron-left"></i> UIButton
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -274,8 +448,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/dhxy.jpg"
@@ -325,6 +508,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -428,6 +622,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
