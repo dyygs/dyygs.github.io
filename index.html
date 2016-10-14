@@ -320,19 +320,16 @@
       
         
           
-            <p>#####题记：</p>
-<blockquote>
+            <h5 id="题记："><a href="#题记：" class="headerlink" title="题记："></a>题记：</h5><blockquote>
 <p>在ios的开发中，总会遇到要对输入的字符长度进行限制，目前网上大多提供的方法都是单纯的对 <em>[textField.text length]</em> 的简单判断，显然这种方法在面对中英文混合的时候并不适用，因为我们想要限制输入20个字符的时候，对应的中文字符应该是10个。</p>
 </blockquote>
-<p>#####处理步骤：</p>
-<ul>
+<h5 id="处理步骤："><a href="#处理步骤：" class="headerlink" title="处理步骤："></a>处理步骤：</h5><ul>
 <li>添加监听</li>
 <li>统计已输入字符的length(中文个数 * 2 + 英文字符个数)</li>
 <li>统计在字符长度限制下的maxLength</li>
 <li>对于超过长度的字符串进行截取</li>
 </ul>
-<p>#####示例代码：    </p>
-<pre><code>NSInteger lengthOfChiness = 0, lengthOfEn = 0;
+<h5 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h5><pre><code>NSInteger lengthOfChiness = 0, lengthOfEn = 0;
    NSString *toBeString = textField.text;
    NSInteger maxLength = 0;
    for(int i=0; i&lt; [toBeString length];i++){
@@ -486,9 +483,10 @@ btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 [self.btn.layer setBorderWidth:1.0];
  //边框颜色
 [self.btn.layer setBorderColor:[UIColor greenColor].CGColor];
-</code></pre><p>setMasksToBounds文档说明:</p>
-<pre><code>/* When true an implicit mask matching the layer bounds is applied to the layer (including the effects of the `cornerRadius&apos; property). If both `mask&apos; and `masksToBounds&apos; are non-nil the two masks are multiplied to get the actual mask values. Defaults to NO. Animatable. */
-</code></pre>
+</code></pre><h6 id="setMasksToBounds文档说明"><a href="#setMasksToBounds文档说明" class="headerlink" title="setMasksToBounds文档说明:"></a>setMasksToBounds文档说明:</h6><blockquote>
+<p>When true an implicit mask matching the layer bounds is applied to the layer (including the effects of the <code>cornerRadius&#39; property). If both</code>mask’ and `masksToBounds’ are non-nil the two masks are multiplied to get the actual mask values. Defaults to NO. Animatable. </p>
+</blockquote>
+
           
         
       
@@ -621,7 +619,7 @@ btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 <li><p>UITextBorderStyleRoundedRect圆角</p>
 </li>
 </ul>
-<h6 id="设置键盘类型不"><a href="#设置键盘类型不" class="headerlink" title="设置键盘类型不"></a>设置键盘类型不</h6><pre><code>textField.keyboardType = UIKeyboardTypeNumberPad;  数字键
+<h6 id="设置键盘类型"><a href="#设置键盘类型" class="headerlink" title="设置键盘类型"></a>设置键盘类型</h6><pre><code>textField.keyboardType = UIKeyboardTypeNumberPad;  数字键
 </code></pre><p>可选属性：</p>
 <ul>
 <li><p>UIKeyboardTypeDefault,                   当前键盘（默认）</p>
@@ -639,8 +637,7 @@ btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 <li><p>UIKeyboardTypeEmailAddress,          邮件地址输入键盘</p>
 </li>
 </ul>
-<p>######键盘风格</p>
-<pre><code>textField.keyboardAppearance=UIKeyboardAppearanceDefault；
+<h6 id="键盘风格"><a href="#键盘风格" class="headerlink" title="键盘风格"></a>键盘风格</h6><pre><code>textField.keyboardAppearance=UIKeyboardAppearanceDefault；
 </code></pre><p>可选属性：</p>
 <ul>
 <li><p>UIKeyboardAppearanceDefault， 默认外观，浅灰色</p>
@@ -648,7 +645,7 @@ btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 <li><p>UIKeyboardAppearanceAlert，     深灰 石墨色</p>
 </li>
 </ul>
-<p>######对齐方式<br>垂直对齐:</p>
+<h6 id="对齐方式"><a href="#对齐方式" class="headerlink" title="对齐方式"></a>对齐方式</h6><p>垂直对齐:</p>
 <pre><code>textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
 </code></pre><p>可选属性：</p>
 <ul>
@@ -672,8 +669,7 @@ btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 <li><p>UITextAlignmentRight，右对齐     </p>
 </li>
 </ul>
-<p>######其他属性</p>
-<ol>
+<h6 id="其他属性"><a href="#其他属性" class="headerlink" title="其他属性"></a>其他属性</h6><ol>
 <li>设置自定义键盘 .inputView</li>
 <li>键盘上方视图 .inputAccessoryView</li>
 <li>左右视图 .leftView (UITextFieldViewModeAlways…)</li>
@@ -682,8 +678,7 @@ btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 <li>设置返回键 .returnKeyType</li>
 <li>设置自动纠正 .autocapitalizationType</li>
 </ol>
-<p>######编辑框代理</p>
-<ul>
+<h6 id="编辑框代理"><a href="#编辑框代理" class="headerlink" title="编辑框代理"></a>编辑框代理</h6><ul>
 <li><p>是否进入编辑模式</p>
 <pre><code>- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 
