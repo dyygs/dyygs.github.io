@@ -102,7 +102,7 @@
 添加监听
 统计已输入字符的length(中文个数 * 2 + 英文字符个数)
 统计在字符长度限制下的maxLengt">
-<meta property="og:updated_time" content="2016-10-14T09:24:02.000Z">
+<meta property="og:updated_time" content="2016-11-14T08:29:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UITextField输入字符限制(中英文混编)">
 <meta name="twitter:description" content="题记：
@@ -311,8 +311,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2016-10-14T17:24:02+08:00">
-              2016-10-14
+            <time title="Post modified" itemprop="dateModified" datetime="2016-11-14T16:29:57+08:00">
+              2016-11-14
             </time>
             
           </span>
@@ -387,30 +387,31 @@
 <li>统计在字符长度限制下的maxLength</li>
 <li>对于超过长度的字符串进行截取</li>
 </ul>
-<h5 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h5><pre><code>NSInteger lengthOfChiness = 0, lengthOfEn = 0;
+<h5 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h5><pre><code class="java">NSInteger lengthOfChiness = <span class="number">0</span>, lengthOfEn = <span class="number">0</span>;
    NSString *toBeString = textField.text;
-   NSInteger maxLength = 0;
-   for(int i=0; i&lt; [toBeString length];i++){
+   NSInteger maxLength = <span class="number">0</span>;
+   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt; [toBeString length];i++){
        unichar a = [toBeString characterAtIndex:i];
-       //判断是否是中文字符
-       if( a &gt; 0x4e00 &amp;&amp; a &lt; 0x9fff)
+       <span class="comment">//判断是否是中文字符</span>
+       <span class="keyword">if</span>( a &gt; <span class="number">0x4e00</span> &amp;&amp; a &lt; <span class="number">0x9fff</span>)
        {
-           //统计中文个数
-           lengthOfChiness += 1;
-       } else {
-           //统计英文个数
-           lengthOfEn +=1;
+           <span class="comment">//统计中文个数</span>
+           lengthOfChiness += <span class="number">1</span>;
+       } <span class="keyword">else</span> {
+           <span class="comment">//统计英文个数</span>
+           lengthOfEn +=<span class="number">1</span>;
        }
-       if ((lengthOfEn + lengthOfChiness * 2) &lt;= 20) {
-           //长度限制下的最大字符个数
+       <span class="keyword">if</span> ((lengthOfEn + lengthOfChiness * <span class="number">2</span>) &lt;= <span class="number">20</span>) {
+           <span class="comment">//长度限制下的最大字符个数</span>
            maxLength = lengthOfEn + lengthOfChiness;
-       } else {
+       } <span class="keyword">else</span> {
            textField.text = [textField.text substringToIndex:maxLength];
-           //自定义弹出窗口文字
-           [[iToast makeText:@&quot;超过字符限制&quot;] show];
+           <span class="comment">//自定义弹出窗口文字</span>
+           [[iToast makeText:@<span class="string">"超过字符限制"</span>] show];
        }
    }
 </code></pre>
+
       
     </div>
 

@@ -104,7 +104,7 @@ requests.get(url, params=None, *">
 requests.request(method, url, **kwargs) 构造并发送一个request请求
 requests.head(url, **kwargs)
 requests.get(url, params=None, *">
-<meta property="og:updated_time" content="2016-11-14T06:59:20.000Z">
+<meta property="og:updated_time" content="2016-11-14T08:29:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Requests库简介">
 <meta name="twitter:description" content="官方api
@@ -314,7 +314,7 @@ requests.get(url, params=None, *">
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2016-11-14T14:59:20+08:00">
+            <time title="Post modified" itemprop="dateModified" datetime="2016-11-14T16:29:20+08:00">
               2016-11-14
             </time>
             
@@ -395,21 +395,24 @@ requests.get(url, params=None, *">
 <li>requests.delete(url, **kwargs)</li>
 </ol>
 <p>参数：</p>
-<pre><code>- method --请求方式
-- url --请求地址
-- params --（可选）查询参数
-- data --(可选)请求body
-- json --()请求body中的json
-- headers --(可选)header头
-- cookies --(可选)cookies
-- files --(可选) 形式：{&apos;name:&apos;, file-like-objects}，或者{&apos;name:&apos;, file-tuple}，文件元组可以有3种形式{&apos;filename&apos;, fileobj}, {&apos;filename&apos;,fileobj,&apos;content_type&apos;}, {&apos;filename&apos;, fileobj, &apos;content_type&apos;, custom_headers}
-- auth --(可选)http认证方式
-- timeout --(可选)链接超时
-- allow_redirects --(可选)重定向
-- verify --(可选)SSL验证，默认为true
-- stream --(可选)如果false，response会被立刻下载
-- cert --(可选)证书
-</code></pre><p>Return: request.Response</p>
+<ul>
+<li>method –请求方式</li>
+<li>url –请求地址</li>
+<li>params –（可选）查询参数</li>
+<li>data –(可选)请求body</li>
+<li>json –()请求body中的json</li>
+<li>headers –(可选)header头</li>
+<li>cookies –(可选)cookies</li>
+<li>files –(可选) 形式：{‘name:’, file-like-objects}，或者{‘name:’, file-tuple}，文件元组可以有3种形式{‘filename’, fileobj}, {‘filename’,fileobj,’content_type’}, {‘filename’, fileobj, ‘content_type’, custom_headers}<ul>
+<li>auth –(可选)http认证方式</li>
+</ul>
+</li>
+<li>timeout –(可选)链接超时</li>
+<li>allow_redirects –(可选)重定向</li>
+<li>verify –(可选)SSL验证，默认为true</li>
+<li>stream –(可选)如果false，response会被立刻下载</li>
+<li>cert –(可选)证书<br>Return: request.Response</li>
+</ul>
 
       
     </div>

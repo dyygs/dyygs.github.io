@@ -297,7 +297,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2016-11-14T14:59:20+08:00">
+            <time title="Post modified" itemprop="dateModified" datetime="2016-11-14T16:29:20+08:00">
               2016-11-14
             </time>
             
@@ -380,21 +380,24 @@
 <li>requests.delete(url, **kwargs)</li>
 </ol>
 <p>参数：</p>
-<pre><code>- method --请求方式
-- url --请求地址
-- params --（可选）查询参数
-- data --(可选)请求body
-- json --()请求body中的json
-- headers --(可选)header头
-- cookies --(可选)cookies
-- files --(可选) 形式：{&apos;name:&apos;, file-like-objects}，或者{&apos;name:&apos;, file-tuple}，文件元组可以有3种形式{&apos;filename&apos;, fileobj}, {&apos;filename&apos;,fileobj,&apos;content_type&apos;}, {&apos;filename&apos;, fileobj, &apos;content_type&apos;, custom_headers}
-- auth --(可选)http认证方式
-- timeout --(可选)链接超时
-- allow_redirects --(可选)重定向
-- verify --(可选)SSL验证，默认为true
-- stream --(可选)如果false，response会被立刻下载
-- cert --(可选)证书
-</code></pre><p>Return: request.Response</p>
+<ul>
+<li>method –请求方式</li>
+<li>url –请求地址</li>
+<li>params –（可选）查询参数</li>
+<li>data –(可选)请求body</li>
+<li>json –()请求body中的json</li>
+<li>headers –(可选)header头</li>
+<li>cookies –(可选)cookies</li>
+<li>files –(可选) 形式：{‘name:’, file-like-objects}，或者{‘name:’, file-tuple}，文件元组可以有3种形式{‘filename’, fileobj}, {‘filename’,fileobj,’content_type’}, {‘filename’, fileobj, ‘content_type’, custom_headers}<ul>
+<li>auth –(可选)http认证方式</li>
+</ul>
+</li>
+<li>timeout –(可选)链接超时</li>
+<li>allow_redirects –(可选)重定向</li>
+<li>verify –(可选)SSL验证，默认为true</li>
+<li>stream –(可选)如果false，response会被立刻下载</li>
+<li>cert –(可选)证书<br>Return: request.Response</li>
+</ul>
 
           
         
@@ -801,8 +804,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2016-10-14T17:24:02+08:00">
-              2016-10-14
+            <time title="Post modified" itemprop="dateModified" datetime="2016-11-14T16:29:57+08:00">
+              2016-11-14
             </time>
             
           </span>
@@ -879,30 +882,31 @@
 <li>统计在字符长度限制下的maxLength</li>
 <li>对于超过长度的字符串进行截取</li>
 </ul>
-<h5 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h5><pre><code>NSInteger lengthOfChiness = 0, lengthOfEn = 0;
+<h5 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h5><pre><code class="java">NSInteger lengthOfChiness = <span class="number">0</span>, lengthOfEn = <span class="number">0</span>;
    NSString *toBeString = textField.text;
-   NSInteger maxLength = 0;
-   for(int i=0; i&lt; [toBeString length];i++){
+   NSInteger maxLength = <span class="number">0</span>;
+   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt; [toBeString length];i++){
        unichar a = [toBeString characterAtIndex:i];
-       //判断是否是中文字符
-       if( a &gt; 0x4e00 &amp;&amp; a &lt; 0x9fff)
+       <span class="comment">//判断是否是中文字符</span>
+       <span class="keyword">if</span>( a &gt; <span class="number">0x4e00</span> &amp;&amp; a &lt; <span class="number">0x9fff</span>)
        {
-           //统计中文个数
-           lengthOfChiness += 1;
-       } else {
-           //统计英文个数
-           lengthOfEn +=1;
+           <span class="comment">//统计中文个数</span>
+           lengthOfChiness += <span class="number">1</span>;
+       } <span class="keyword">else</span> {
+           <span class="comment">//统计英文个数</span>
+           lengthOfEn +=<span class="number">1</span>;
        }
-       if ((lengthOfEn + lengthOfChiness * 2) &lt;= 20) {
-           //长度限制下的最大字符个数
+       <span class="keyword">if</span> ((lengthOfEn + lengthOfChiness * <span class="number">2</span>) &lt;= <span class="number">20</span>) {
+           <span class="comment">//长度限制下的最大字符个数</span>
            maxLength = lengthOfEn + lengthOfChiness;
-       } else {
+       } <span class="keyword">else</span> {
            textField.text = [textField.text substringToIndex:maxLength];
-           //自定义弹出窗口文字
-           [[iToast makeText:@&quot;超过字符限制&quot;] show];
+           <span class="comment">//自定义弹出窗口文字</span>
+           [[iToast makeText:@<span class="string">"超过字符限制"</span>] show];
        }
    }
 </code></pre>
+
           
         
       
@@ -988,7 +992,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2016-11-14T16:24:46+08:00">
+            <time title="Post modified" itemprop="dateModified" datetime="2016-11-14T16:27:42+08:00">
               2016-11-14
             </time>
             
@@ -1057,9 +1061,9 @@
       
         
           
-            <h6 id="给UIButton设置边框"><a href="#给UIButton设置边框" class="headerlink" title="给UIButton设置边框"></a>给UIButton设置边框</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> dy</div><div class="line"><span class="comment">//圆角样式</span></div><div class="line">btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];</div><div class="line"><span class="comment">//圆角弧度</span></div><div class="line">   [btn.layer setCornerRadius:<span class="number">5.0</span>];</div><div class="line">   <span class="comment">//允许修饰边框</span></div><div class="line">   [btn.layer setMasksToBounds:YES];</div><div class="line">    <span class="comment">//边框宽度</span></div><div class="line">   [self.btn.layer setBorderWidth:<span class="number">1.0</span>];</div><div class="line">    <span class="comment">//边框颜色</span></div><div class="line">   [self.btn.layer setBorderColor:[UIColor greenColor].CGColor];</div></pre></td></tr></table></figure>
+            <h6 id="给UIButton设置边框"><a href="#给UIButton设置边框" class="headerlink" title="给UIButton设置边框"></a>给UIButton设置边框</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//圆角样式</span></div><div class="line">btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];</div><div class="line"><span class="comment">//圆角弧度</span></div><div class="line">[btn.layer setCornerRadius:<span class="number">5.0</span>];</div><div class="line"><span class="comment">//允许修饰边框</span></div><div class="line">[btn.layer setMasksToBounds:YES];</div><div class="line"><span class="comment">//边框宽度</span></div><div class="line">[self.btn.layer setBorderWidth:<span class="number">1.0</span>];</div><div class="line"><span class="comment">//边框颜色</span></div><div class="line">[self.btn.layer setBorderColor:[UIColor greenColor].CGColor];</div></pre></td></tr></table></figure>
 <h6 id="setMasksToBounds文档说明"><a href="#setMasksToBounds文档说明" class="headerlink" title="setMasksToBounds文档说明:"></a>setMasksToBounds文档说明:</h6><blockquote>
-<p>When true an implicit mask matching the layer bounds is applied to the layer (including the effects of the <code>cornerRadius&#39; property). If both</code>mask’ and `masksToBounds’ are non-nil the two masks are multiplied to get the actual mask values. Defaults to NO. Animatable. </p>
+<p>When true an implicit mask matching the layer bounds is applied to the layer (including the effects of the cornerRadius property). If both  mask  and `masksToBounds’ are non-nil the two masks are multiplied to get the actual mask values. Defaults to NO. Animatable. </p>
 </blockquote>
 
           
@@ -1147,8 +1151,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2016-10-14T17:23:51+08:00">
-              2016-10-14
+            <time title="Post modified" itemprop="dateModified" datetime="2016-11-14T16:32:24+08:00">
+              2016-11-14
             </time>
             
           </span>
@@ -1216,118 +1220,31 @@
       
         
           
-            <h6 id="设置边框属性"><a href="#设置边框属性" class="headerlink" title="设置边框属性"></a>设置边框属性</h6><pre><code>textField.borderStyle = UITextBorderStyleRoundedRect;
-</code></pre><p>可选属性：</p>
+            <h6 id="设置边框属性"><a href="#设置边框属性" class="headerlink" title="设置边框属性"></a>设置边框属性</h6><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div></pre></td><td class="code"><pre><div class="line">	textField.borderStyle = UITextBorderStyleRoundedRect;</div><div class="line">```	</div><div class="line">可选属性：</div><div class="line"></div><div class="line">- UITextBorderStyleNone,无边框</div><div class="line"></div><div class="line">- UITextBorderStyleLine,有边框</div><div class="line"></div><div class="line">- UITextBorderStyleBezel,有边框和阴影</div><div class="line"></div><div class="line">- UITextBorderStyleRoundedRect圆角</div><div class="line"></div><div class="line"></div><div class="line">###### 设置键盘类型</div><div class="line">```java	</div><div class="line">	textField.keyboardType = UIKeyboardTypeNumberPad;  数字键</div><div class="line">```	</div><div class="line">可选属性：</div><div class="line"></div><div class="line">- UIKeyboardTypeDefault,                   当前键盘（默认）</div><div class="line">	</div><div class="line">- UIKeyboardTypeASCIICapable,          字母输入键</div><div class="line">	</div><div class="line">- UIKeyboardTypeNumbersAndPunctuation,  数字和符号</div><div class="line">	</div><div class="line">- UIKeyboardTypeURL,                       URL键盘</div><div class="line">	</div><div class="line">- UIKeyboardTypeNumberPad,             数字键盘</div><div class="line">	</div><div class="line">- UIKeyboardTypePhonePad,               电话号码输入键盘  </div><div class="line">	 </div><div class="line">- UIKeyboardTypeEmailAddress,          邮件地址输入键盘</div><div class="line"></div><div class="line">###### 键盘风格</div><div class="line">```java</div><div class="line">	textField.keyboardAppearance=UIKeyboardAppearanceDefault；</div><div class="line">```	</div><div class="line">可选属性：</div><div class="line"></div><div class="line">- UIKeyboardAppearanceDefault， 默认外观，浅灰色</div><div class="line"></div><div class="line">- UIKeyboardAppearanceAlert，     深灰 石墨色</div><div class="line"></div><div class="line">###### 对齐方式</div><div class="line">垂直对齐:</div><div class="line">```java</div><div class="line">	textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;</div><div class="line">```	</div><div class="line">可选属性：</div><div class="line"></div><div class="line">- UIControlContentVerticalAlignmentCenter  居中对齐</div><div class="line"></div><div class="line">- UIControlContentVerticalAlignmentTop    顶部对齐，默认是顶部对齐</div><div class="line"></div><div class="line">- UIControlContentVerticalAlignmentBottom 底部对齐</div><div class="line"></div><div class="line">- UIControlContentVerticalAlignmentFill    完全填充</div><div class="line">	</div><div class="line">水平对齐:</div><div class="line">```java</div><div class="line">	textField.textAlignment = UITextAlignmentCenter;</div><div class="line">```	</div><div class="line">	</div><div class="line">可选属性：</div><div class="line"></div><div class="line">- UITextAlignmentLeft，左对齐，默认是左对齐</div><div class="line"></div><div class="line">- UITextAlignmentCenter，</div><div class="line"></div><div class="line">- UITextAlignmentRight，右对齐 	</div><div class="line"></div><div class="line">###### 其他属性</div><div class="line"></div><div class="line">1. 设置自定义键盘 .inputView</div><div class="line">2. 键盘上方视图 .inputAccessoryView</div><div class="line">3. 左右视图 .leftView (UITextFieldViewModeAlways...)</div><div class="line">4. 清除按钮 .clearButtonMode</div><div class="line">5. 再次编辑是否清空 .clearsOnBeginEditing</div><div class="line">6. 设置返回键 .returnKeyType</div><div class="line">7. 设置自动纠正 .autocapitalizationType</div><div class="line"></div><div class="line">###### 编辑框代理</div><div class="line"></div><div class="line">- 是否进入编辑模式</div><div class="line">```java</div><div class="line">	    - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField</div><div class="line"></div><div class="line">		默认返回YES，进入编辑模式。NO不进入编辑模式</div></pre></td></tr></table></figure>
 <ul>
-<li><p>UITextBorderStyleNone,无边框</p>
-</li>
-<li><p>UITextBorderStyleLine,有边框</p>
-</li>
-<li><p>UITextBorderStyleBezel,有边框和阴影</p>
-</li>
-<li><p>UITextBorderStyleRoundedRect圆角</p>
+<li>进入编辑模式<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)textFieldDidBeginEditing:(UITextField *)textField</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h6 id="设置键盘类型"><a href="#设置键盘类型" class="headerlink" title="设置键盘类型"></a>设置键盘类型</h6><pre><code>textField.keyboardType = UIKeyboardTypeNumberPad;  数字键
-</code></pre><p>可选属性：</p>
 <ul>
-<li><p>UIKeyboardTypeDefault,                   当前键盘（默认）</p>
-</li>
-<li><p>UIKeyboardTypeASCIICapable,          字母输入键</p>
-</li>
-<li><p>UIKeyboardTypeNumbersAndPunctuation,  数字和符号</p>
-</li>
-<li><p>UIKeyboardTypeURL,                       URL键盘</p>
-</li>
-<li><p>UIKeyboardTypeNumberPad,             数字键盘</p>
-</li>
-<li><p>UIKeyboardTypePhonePad,               电话号码输入键盘  </p>
-</li>
-<li><p>UIKeyboardTypeEmailAddress,          邮件地址输入键盘</p>
+<li>是否退出编辑模式<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   - (BOOL)textFieldShouldEndEditing:(UITextField *)textField</div><div class="line"></div><div class="line">默认返回YES，退出编辑模式。NO不退出编辑模式</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h6 id="键盘风格"><a href="#键盘风格" class="headerlink" title="键盘风格"></a>键盘风格</h6><pre><code>textField.keyboardAppearance=UIKeyboardAppearanceDefault；
-</code></pre><p>可选属性：</p>
 <ul>
-<li><p>UIKeyboardAppearanceDefault， 默认外观，浅灰色</p>
-</li>
-<li><p>UIKeyboardAppearanceAlert，     深灰 石墨色</p>
+<li>退出编辑模式<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)textFieldDidEndEditing:(UITextField *)textField</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h6 id="对齐方式"><a href="#对齐方式" class="headerlink" title="对齐方式"></a>对齐方式</h6><p>垂直对齐:</p>
-<pre><code>textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-</code></pre><p>可选属性：</p>
 <ul>
-<li><p>UIControlContentVerticalAlignmentCenter  居中对齐</p>
-</li>
-<li><p>UIControlContentVerticalAlignmentTop    顶部对齐，默认是顶部对齐</p>
-</li>
-<li><p>UIControlContentVerticalAlignmentBottom 底部对齐</p>
-</li>
-<li><p>UIControlContentVerticalAlignmentFill    完全填充</p>
+<li>点击清除按钮是否清除<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- (BOOL)textFieldShouldClear:(UITextField *)textField</div><div class="line"></div><div class="line">默认返回YES，返回NO不清除</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>水平对齐:</p>
-<pre><code>textField.textAlignment = UITextAlignmentCenter;
-</code></pre><p>可选属性：</p>
 <ul>
-<li><p>UITextAlignmentLeft，左对齐，默认是左对齐</p>
+<li>点击键盘上Return按钮时候调用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (BOOL)textFieldShouldReturn:(UITextField *)textField</div></pre></td></tr></table></figure>
 </li>
-<li><p>UITextAlignmentCenter，</p>
-</li>
-<li><p>UITextAlignmentRight，右对齐     </p>
-</li>
-</ul>
-<h6 id="其他属性"><a href="#其他属性" class="headerlink" title="其他属性"></a>其他属性</h6><ol>
-<li>设置自定义键盘 .inputView</li>
-<li>键盘上方视图 .inputAccessoryView</li>
-<li>左右视图 .leftView (UITextFieldViewModeAlways…)</li>
-<li>清除按钮 .clearButtonMode</li>
-<li>再次编辑是否清空 .clearsOnBeginEditing</li>
-<li>设置返回键 .returnKeyType</li>
-<li>设置自动纠正 .autocapitalizationType</li>
-</ol>
-<h6 id="编辑框代理"><a href="#编辑框代理" class="headerlink" title="编辑框代理"></a>编辑框代理</h6><ul>
-<li><p>是否进入编辑模式</p>
-<pre><code>- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-
-默认返回YES，进入编辑模式。NO不进入编辑模式
-</code></pre></li>
-</ul>
-<ul>
-<li><p>进入编辑模式</p>
-<pre><code>- (void)textFieldDidBeginEditing:(UITextField *)textField
-</code></pre></li>
-</ul>
-<ul>
-<li><p>是否退出编辑模式</p>
-<pre><code>- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
-
-默认返回YES，退出编辑模式。NO不退出编辑模式
-</code></pre></li>
-</ul>
-<ul>
-<li><p>退出编辑模式</p>
-<pre><code>- (void)textFieldDidEndEditing:(UITextField *)textField
-</code></pre></li>
-</ul>
-<ul>
-<li><p>点击清除按钮是否清除</p>
-<pre><code>- (BOOL)textFieldShouldClear:(UITextField *)textField
-
-默认返回YES，返回NO不清除
-</code></pre></li>
-</ul>
-<ul>
-<li><p>点击键盘上Return按钮时候调用</p>
-<pre><code>- (BOOL)textFieldShouldReturn:(UITextField *)textField
-</code></pre></li>
 </ul>
 <ul>
 <li><p>当输入任何字符时，代理调用该方法</p>
-<pre><code>-(BOOL)textField:(UITextField *)field shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-
-当输入字符时，代理调用该方法，如果返回YES则这次输入可以成功，如果返回NO，不能输入成功。range表示光标位置，string表示这次输入的字符串。
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-(BOOL)textField:(UITextField *)field shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string</div></pre></td></tr></table></figure>
+<pre><code>当输入字符时，代理调用该方法，如果返回YES则这次输入可以成功，如果返回NO，不能输入成功。range表示光标位置，string表示这次输入的字符串。
 </code></pre></li>
 </ul>
 <p>当输入字符时，代理调用该方法，如果返回YES则这次输入可以成功，如果返回NO，不能输入成功。range表示光标位置，string表示这次输入的字符串。</p>
