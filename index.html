@@ -248,6 +248,163 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/11/Requests库简介/" itemprop="url">
+                  Requests库简介
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-11T09:12:36+08:00" content="2016-11-11">
+              2016-11-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/python学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">python学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/11/Requests库简介/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/11/Requests库简介/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/11/11/Requests库简介/" class="leancloud_visitors" data-flag-title="Requests库简介">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://docs.python-requests.org/en/master/api/" target="_blank" rel="external">官方api</a></p>
+<p>###译文：</p>
+<p>本文涵盖了Requests库所有的接口，对于一些依赖的外部库，本文中提供了最重要的一部分说明，并提供了规范文档的链接</p>
+<p>####主要接口</p>
+<ol>
+<li>requests.request(method, url, **kwargs) 构造并发送一个request请求</li>
+<li>requests.head(url, **kwargs)</li>
+<li>requests.get(url, params=None, **kwargs)</li>
+<li>requests.post(url, data=None, json=None, **kwargs)</li>
+<li>requests.put(url, data=None, **kwargs)</li>
+<li>requests.patch(url, data=None, **kwargs)</li>
+<li>requests.delete(url, **kwargs)</li>
+</ol>
+<p>参数：</p>
+<pre><code>- method --请求方式
+- url --请求地址
+- params --（可选）查询参数
+- data --(可选)请求body
+- json --()请求body中的json
+- headers --(可选)header头
+- cookies --(可选)cookies
+- files --(可选) 形式：{&apos;name:&apos;, file-like-objects}，或者{&apos;name:&apos;, file-tuple}，文件元组可以有3种形式{&apos;filename&apos;, fileobj}, {&apos;filename&apos;,fileobj,&apos;content_type&apos;}, {&apos;filename&apos;, fileobj, &apos;content_type&apos;, custom_headers}
+- auth --(可选)http认证方式
+- timeout --(可选)链接超时
+- allow_redirects --(可选)重定向
+- verify --(可选)SSL验证，默认为true
+- stream --(可选)如果false，response会被立刻下载
+- cert --(可选)证书
+</code></pre><p>Return: request.Response</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/17/随笔/" itemprop="url">
                   随笔
                 </a>
@@ -1069,7 +1226,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1077,7 +1234,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1086,7 +1243,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python," />
 
 
 
@@ -84,15 +84,37 @@
 
 
 
-<meta name="description" content="Where there is a will, there is a way.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="dyygs的博客">
-<meta property="og:url" content="http://yoursite.com/tags/瞎折腾/index.html">
+<meta name="description" content="官方api
+###译文：
+本文涵盖了Requests库所有的接口，对于一些依赖的外部库，本文中提供了最重要的一部分说明，并提供了规范文档的链接
+####主要接口
+
+requests.request(method, url, **kwargs) 构造并发送一个request请求
+requests.head(url, **kwargs)
+requests.get(url, params=None, *">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Requests库简介">
+<meta property="og:url" content="http://yoursite.com/2016/11/11/Requests库简介/index.html">
 <meta property="og:site_name" content="dyygs的博客">
-<meta property="og:description" content="Where there is a will, there is a way.">
+<meta property="og:description" content="官方api
+###译文：
+本文涵盖了Requests库所有的接口，对于一些依赖的外部库，本文中提供了最重要的一部分说明，并提供了规范文档的链接
+####主要接口
+
+requests.request(method, url, **kwargs) 构造并发送一个request请求
+requests.head(url, **kwargs)
+requests.get(url, params=None, *">
+<meta property="og:updated_time" content="2016-11-14T06:59:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="dyygs的博客">
-<meta name="twitter:description" content="Where there is a will, there is a way.">
+<meta name="twitter:title" content="Requests库简介">
+<meta name="twitter:description" content="官方api
+###译文：
+本文涵盖了Requests库所有的接口，对于一些依赖的外部库，本文中提供了最重要的一部分说明，并提供了规范文档的链接
+####主要接口
+
+requests.request(method, url, **kwargs) 构造并发送一个request请求
+requests.head(url, **kwargs)
+requests.get(url, params=None, *">
 
 
 
@@ -113,9 +135,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/瞎折腾/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/11/Requests库简介/"/>
 
-  <title> 标签: 瞎折腾 | dyygs的博客 </title>
+  <title> Requests库简介 | dyygs的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,7 +158,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,46 +246,185 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        瞎折腾
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Requests库简介
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-11T09:12:36+08:00" content="2016-11-11">
+              2016-11-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/python学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">python学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/11/Requests库简介/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/11/Requests库简介/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/11/11/Requests库简介/" class="leancloud_visitors" data-flag-title="Requests库简介">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p><a href="http://docs.python-requests.org/en/master/api/" target="_blank" rel="external">官方api</a></p>
+<p>###译文：</p>
+<p>本文涵盖了Requests库所有的接口，对于一些依赖的外部库，本文中提供了最重要的一部分说明，并提供了规范文档的链接</p>
+<p>####主要接口</p>
+<ol>
+<li>requests.request(method, url, **kwargs) 构造并发送一个request请求</li>
+<li>requests.head(url, **kwargs)</li>
+<li>requests.get(url, params=None, **kwargs)</li>
+<li>requests.post(url, data=None, json=None, **kwargs)</li>
+<li>requests.put(url, data=None, **kwargs)</li>
+<li>requests.patch(url, data=None, **kwargs)</li>
+<li>requests.delete(url, **kwargs)</li>
+</ol>
+<p>参数：</p>
+<pre><code>- method --请求方式
+- url --请求地址
+- params --（可选）查询参数
+- data --(可选)请求body
+- json --()请求body中的json
+- headers --(可选)header头
+- cookies --(可选)cookies
+- files --(可选) 形式：{&apos;name:&apos;, file-like-objects}，或者{&apos;name:&apos;, file-tuple}，文件元组可以有3种形式{&apos;filename&apos;, fileobj}, {&apos;filename&apos;,fileobj,&apos;content_type&apos;}, {&apos;filename&apos;, fileobj, &apos;content_type&apos;, custom_headers}
+- auth --(可选)http认证方式
+- timeout --(可选)链接超时
+- allow_redirects --(可选)重定向
+- verify --(可选)SSL验证，默认为true
+- stream --(可选)如果false，response会被立刻下载
+- cert --(可选)证书
+</code></pre><p>Return: request.Response</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/10/15/sierra升级/" itemprop="url">
-              
-                <span itemprop="name">sierra升级</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-15T16:35:51+08:00"
-              content="2016-10-15" >
-          10-15
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/17/随笔/" rel="next" title="随笔">
+                <i class="fa fa-chevron-left"></i> 随笔
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -271,6 +432,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/11/Requests库简介/"
+           data-title="Requests库简介" data-url="http://yoursite.com/2016/11/11/Requests库简介/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -290,8 +459,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/dhxy.jpg"
@@ -341,6 +519,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -444,6 +633,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
