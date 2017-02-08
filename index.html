@@ -297,7 +297,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2017-02-08T10:58:16+08:00">
+            <time title="Post modified" itemprop="dateModified" datetime="2017-02-08T11:02:58+08:00">
               2017-02-08
             </time>
             
@@ -366,12 +366,10 @@
       
         
           
-            <p>###handler是干什么的？</p>
-<blockquote>
+            <h3 id="handler是干什么的？"><a href="#handler是干什么的？" class="headerlink" title="handler是干什么的？"></a>handler是干什么的？</h3><blockquote>
 <p>众所周知，android的UI是线程不安全的，但是，当我们需要在子线程去更新UI，该怎么办的？势必要把更新UI的操作，通过某种方式发送到UI线程上，handler应运而生。通过在子线程中创建Message或Runable对象，经由handler发送到UI线程上，然后在handleMessage()方法中去更新UI。</p>
 </blockquote>
-<p>###handler怎么使用？</p>
-<ol>
+<h3 id="handler怎么使用？"><a href="#handler怎么使用？" class="headerlink" title="handler怎么使用？"></a>handler怎么使用？</h3><ol>
 <li>在Ui线程初始化handler</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">handler = <span class="keyword">new</span> Handler(<span class="keyword">new</span> Handler.Callback() &#123;</div><div class="line">                    <span class="meta">@Override</span></div><div class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">                        <span class="keyword">if</span> (msg.what == <span class="number">1</span>) &#123;</div><div class="line">                            ((Button) findViewById(R.id.test)).setText(Thread.currentThread().getName());</div><div class="line">                            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">                        &#125;</div><div class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div></pre></td></tr></table></figure>
@@ -382,12 +380,10 @@
 <blockquote>
 <p>结果是button上显示为mainThread，说明在子线程发送的消息，成功到达了UI线程</p>
 </blockquote>
-<p>###如果Handler创建在子线程呢？(虽然这样没什么卵用，主要是为了说明handler与线程的关联)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                Looper.prepare();</div><div class="line">                handler = <span class="keyword">new</span> Handler(<span class="keyword">new</span> Handler.Callback() &#123;</div><div class="line">                    <span class="meta">@Override</span></div><div class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">                        <span class="keyword">if</span> (msg.what == <span class="number">1</span>) &#123;</div><div class="line">                            ((Button) findViewById(R.id.test)).setText(Thread.currentThread().getName());</div><div class="line">                            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">                        &#125;</div><div class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">                <span class="keyword">if</span> (handler != <span class="keyword">null</span>) &#123;</div><div class="line">                    Message message = handler.obtainMessage();</div><div class="line">                    message.what = <span class="number">1</span>;</div><div class="line">                    handler.sendMessage(message);</div><div class="line">                &#125;</div><div class="line">                Looper.loop();</div><div class="line">            &#125;</div><div class="line">        &#125;).start();</div></pre></td></tr></table></figure>
+<h3 id="如果Handler创建在子线程呢？-虽然这样没什么卵用，主要是为了说明handler与线程的关联"><a href="#如果Handler创建在子线程呢？-虽然这样没什么卵用，主要是为了说明handler与线程的关联" class="headerlink" title="如果Handler创建在子线程呢？(虽然这样没什么卵用，主要是为了说明handler与线程的关联)"></a>如果Handler创建在子线程呢？(虽然这样没什么卵用，主要是为了说明handler与线程的关联)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                Looper.prepare();</div><div class="line">                handler = <span class="keyword">new</span> Handler(<span class="keyword">new</span> Handler.Callback() &#123;</div><div class="line">                    <span class="meta">@Override</span></div><div class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">                        <span class="keyword">if</span> (msg.what == <span class="number">1</span>) &#123;</div><div class="line">                            ((Button) findViewById(R.id.test)).setText(Thread.currentThread().getName());</div><div class="line">                            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">                        &#125;</div><div class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">                <span class="keyword">if</span> (handler != <span class="keyword">null</span>) &#123;</div><div class="line">                    Message message = handler.obtainMessage();</div><div class="line">                    message.what = <span class="number">1</span>;</div><div class="line">                    handler.sendMessage(message);</div><div class="line">                &#125;</div><div class="line">                Looper.loop();</div><div class="line">            &#125;</div><div class="line">        &#125;).start();</div></pre></td></tr></table></figure>
 <blockquote>
 <p>结果是button短暂展示子线程名，然后崩溃，崩溃信息：Only the original thread that created a view hierarchy can touch its views.即不能再子线程更新ui。</p>
-<p>###handler更多用法</p>
-</blockquote>
+<h3 id="handler更多用法"><a href="#handler更多用法" class="headerlink" title="handler更多用法"></a>handler更多用法</h3></blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//包含简单信息，等同与message.what = 1</span></div><div class="line">sendEmptyMessage(<span class="keyword">int</span>) </div><div class="line"><span class="comment">//可包含复杂信息，message.setData(Bundle bundle)</span></div><div class="line">sendMessage(Message); </div><div class="line"><span class="comment">//在某个时间</span></div><div class="line">sendMessageAtTime(Message，<span class="keyword">long</span>) </div><div class="line"><span class="comment">//设置一定延时</span></div><div class="line">sendMessageDelayed(Message，<span class="keyword">long</span>)</div><div class="line"><span class="comment">//发送Message,并且置于MsgQueue顶部，即第一个执行</span></div><div class="line">sendMessageAtFrontOfQueue(Message)</div><div class="line"><span class="comment">//post用法类似</span></div><div class="line">post(Runnable) </div><div class="line">postAtTime(Runnable，<span class="keyword">long</span>) </div><div class="line">postDelayed(Runnable，<span class="keyword">long</span>) </div><div class="line">postAtFrontOfQueue(Runnable r)</div></pre></td></tr></table></figure>
           
         
@@ -474,8 +470,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2016-11-14T17:52:01+08:00">
-              2016-11-14
+            <time title="Post modified" itemprop="dateModified" datetime="2017-02-08T11:03:07+08:00">
+              2017-02-08
             </time>
             
           </span>
@@ -544,10 +540,8 @@
         
           
             <p><a href="http://docs.python-requests.org/en/master/api/" target="_blank" rel="external">官方api链接</a></p>
-<p>###译文：</p>
-<p>本文涵盖了Requests库所有的接口，对于一些依赖的外部库，本文中提供了最重要的一部分说明，并提供了规范文档的链接</p>
-<p>####主要接口</p>
-<ol>
+<h3 id="译文："><a href="#译文：" class="headerlink" title="译文："></a>译文：</h3><p>本文涵盖了Requests库所有的接口，对于一些依赖的外部库，本文中提供了最重要的一部分说明，并提供了规范文档的链接</p>
+<h4 id="主要接口"><a href="#主要接口" class="headerlink" title="主要接口"></a>主要接口</h4><ol>
 <li>requests.request(method, url, **kwargs) 构造并发送一个request请求</li>
 <li>requests.head(url, **kwargs)</li>
 <li>requests.get(url, params=None, **kwargs)</li>
