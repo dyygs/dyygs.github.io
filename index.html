@@ -249,6 +249,183 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/09/Looper学习笔记/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="dyygs">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/dhxy.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="dyygs的博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="dyygs的博客" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/09/Looper学习笔记/" itemprop="url">
+                  Looper学习笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-09T09:30:27+08:00">
+              2017-02-09
+            </time>
+
+            &nbsp;|&nbsp;
+
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-check-o"></i>
+            </span>
+            <time title="Post modified" itemprop="dateModified" datetime="2017-02-09T11:45:20+08:00">
+              2017-02-09
+            </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/09/Looper学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/09/Looper学习笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/02/09/Looper学习笔记/" class="leancloud_visitors" data-flag-title="Looper学习笔记">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Looper是什么？"><a href="#Looper是什么？" class="headerlink" title="Looper是什么？"></a>Looper是什么？</h3><blockquote>
+<p>Class used to run a message loop for a thread.  Threads by default do<br>not have a message loop associated with them; to create one, call<br>{@link #prepare} in the thread that is to run the loop, and then<br>{@link #loop} to have it process messages until the loop is stopped.</p>
+</blockquote>
+<p>引用源码中的annotation,Looper能为一个线程循环一个消息队列，默认情况下，线程不开启Looper（UI线程是开启的）,所以我们需要通过调用Looper.prepare()来初始化Looper，然后调用Looper.loop()使其循环开始，直到调用Looper.quit();</p>
+<h3 id="Looper怎么使用？"><a href="#Looper怎么使用？" class="headerlink" title="Looper怎么使用？"></a>Looper怎么使用？</h3><ol>
+<li>新建Looper线程</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">LooperThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> Handler mHandler;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        Looper.prepare();</div><div class="line">        mHandler = <span class="keyword">new</span> Handler() &#123;</div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">                <span class="comment">// process incoming messages here</span></div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        Looper.loop();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>在中，调用LooperThread的 mHandler发送对象</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">final</span> LooperThread mLooperThread = <span class="keyword">new</span> LooperThread();</div><div class="line">mLooperThread.start();</div><div class="line">Thread threadOfMsg = <span class="keyword">new</span> Thread() &#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span> (mLooperThread.mHandler == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                wait();<span class="comment">//防止在发送消息时Handler还没建立</span></div><div class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        mLooperThread.mHandler.sendEmptyMessage(<span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">&#125;.start();</div></pre></td></tr></table></figure>
+<h3 id="Looper-prepare-做了什么？"><a href="#Looper-prepare-做了什么？" class="headerlink" title="Looper.prepare()做了什么？"></a>Looper.prepare()做了什么？</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** Initialize the current thread as a looper.</span></div><div class="line">  * This gives you a chance to create handlers that then reference</div><div class="line">  * this looper, before actually starting the loop. Be sure to call</div><div class="line">  * &#123;<span class="doctag">@link</span> #loop()&#125; after calling this method, and end it by calling</div><div class="line">  * &#123;<span class="doctag">@link</span> #quit()&#125;.</div><div class="line">  */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">prepare</span><span class="params">()</span> </span>&#123;</div><div class="line">    prepare(<span class="keyword">true</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">prepare</span><span class="params">(<span class="keyword">boolean</span> quitAllowed)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (sThreadLocal.get() != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Only one Looper may be created per thread"</span>);</div><div class="line">    &#125;</div><div class="line">    sThreadLocal.set(<span class="keyword">new</span> Looper(quitAllowed));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="title">Looper</span><span class="params">(<span class="keyword">boolean</span> quitAllowed)</span> </span>&#123;</div><div class="line">    mQueue = <span class="keyword">new</span> MessageQueue(quitAllowed);</div><div class="line">    mThread = Thread.currentThread();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以看到prepare的过程就是初始化Looper，并且和当前线程绑定的一个过程</p>
+<h3 id="Looper-loop-做了什么？"><a href="#Looper-loop-做了什么？" class="headerlink" title="Looper.loop()做了什么？"></a>Looper.loop()做了什么？</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">     * Run the message queue in this thread. Be sure to call</div><div class="line">     * &#123;<span class="doctag">@link</span> #quit()&#125; to end the loop.</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">final</span> Looper me = myLooper();</div><div class="line">        <span class="keyword">if</span> (me == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"No Looper; Looper.prepare() wasn't called on this thread."</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">final</span> MessageQueue queue = me.mQueue;</div><div class="line">        <span class="comment">//...省略部分代码</span></div><div class="line">        <span class="keyword">for</span> (;;) &#123;</div><div class="line">            Message msg = queue.next(); <span class="comment">// might block</span></div><div class="line">            <span class="keyword">if</span> (msg == <span class="keyword">null</span>) &#123;</div><div class="line">                <span class="comment">// No message indicates that the message queue is quitting.</span></div><div class="line">                <span class="keyword">return</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="comment">//...省略部分代码</span></div><div class="line">            msg.target.dispatchMessage(msg);</div><div class="line">            <span class="comment">//...省略部分代码</span></div><div class="line">            msg.recycleUnchecked();</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>除去冗余代码，主要是通过一个for循环，来不断的对msg进行分发</p>
+<h3 id="结合上篇的handler，来看一下dispatchMessage-msg"><a href="#结合上篇的handler，来看一下dispatchMessage-msg" class="headerlink" title="结合上篇的handler，来看一下dispatchMessage(msg)"></a>结合上篇的handler，来看一下dispatchMessage(msg)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Handle system messages here.</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dispatchMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (msg.callback != <span class="keyword">null</span>) &#123;</div><div class="line">        handleCallback(msg);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">if</span> (mCallback != <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (mCallback.handleMessage(msg)) &#123;</div><div class="line">                <span class="keyword">return</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        handleMessage(msg);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>如果Message自带了Callback，则交给Message的Callback处理；</li>
+<li>如果Handler了设置了Callback，则交给Handler的Callback处理；</li>
+<li>如果两者都没有，则调用handleMessage方法处理。</li>
+</ol>
+<h4 id="到这一步，就把位于threadOfMsg线程的msg发送到了looperThread，完成了线程间的通信"><a href="#到这一步，就把位于threadOfMsg线程的msg发送到了looperThread，完成了线程间的通信" class="headerlink" title="到这一步，就把位于threadOfMsg线程的msg发送到了looperThread，完成了线程间的通信"></a>到这一步，就把位于threadOfMsg线程的msg发送到了looperThread，完成了线程间的通信</h4>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/08/handler学习笔记/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1530,7 +1707,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
