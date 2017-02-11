@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="python," />
+  <meta name="keywords" content="android," />
 
 
 
@@ -84,31 +84,19 @@
 
 
 
-<meta name="description" content="官方api链接
-译文：本文涵盖了Requests库所有的接口，对于一些依赖的外部库，本文中提供了最重要的一部分说明，并提供了规范文档的链接
-主要接口
-requests.request(method, url, **kwargs) 构造并发送一个request请求
-requests.head(url, **kwargs)
-requests.get(url, params=None, **kwargs">
+<meta name="description" content="Intent是什么？
+An intent is an abstract description of an operation to be performed.  Itcan be used with {@link Context#startActivity(Intent) startActivity} tolaunch an {@link android.app.Activity}, {@lin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Requests库简介">
-<meta property="og:url" content="http://yoursite.com/2016/11/11/Requests库简介/index.html">
+<meta property="og:title" content="Intent学习笔记">
+<meta property="og:url" content="http://yoursite.com/2017/02/11/Intent学习笔记/index.html">
 <meta property="og:site_name" content="dyygs的博客">
-<meta property="og:description" content="官方api链接
-译文：本文涵盖了Requests库所有的接口，对于一些依赖的外部库，本文中提供了最重要的一部分说明，并提供了规范文档的链接
-主要接口
-requests.request(method, url, **kwargs) 构造并发送一个request请求
-requests.head(url, **kwargs)
-requests.get(url, params=None, **kwargs">
-<meta property="og:updated_time" content="2017-02-08T03:03:07.000Z">
+<meta property="og:description" content="Intent是什么？
+An intent is an abstract description of an operation to be performed.  Itcan be used with {@link Context#startActivity(Intent) startActivity} tolaunch an {@link android.app.Activity}, {@lin">
+<meta property="og:updated_time" content="2017-02-11T08:37:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Requests库简介">
-<meta name="twitter:description" content="官方api链接
-译文：本文涵盖了Requests库所有的接口，对于一些依赖的外部库，本文中提供了最重要的一部分说明，并提供了规范文档的链接
-主要接口
-requests.request(method, url, **kwargs) 构造并发送一个request请求
-requests.head(url, **kwargs)
-requests.get(url, params=None, **kwargs">
+<meta name="twitter:title" content="Intent学习笔记">
+<meta name="twitter:description" content="Intent是什么？
+An intent is an abstract description of an operation to be performed.  Itcan be used with {@link Context#startActivity(Intent) startActivity} tolaunch an {@link android.app.Activity}, {@lin">
 
 
 
@@ -136,13 +124,13 @@ requests.get(url, params=None, **kwargs">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/11/11/Requests库简介/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/11/Intent学习笔记/"/>
 
 
 
 
 
-  <title> Requests库简介 | dyygs的博客 </title>
+  <title> Intent学习笔记 | dyygs的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +251,7 @@ requests.get(url, params=None, **kwargs">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/11/Requests库简介/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/11/Intent学习笔记/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="dyygs">
@@ -287,7 +275,7 @@ requests.get(url, params=None, **kwargs">
             
             
               
-                Requests库简介
+                Intent学习笔记
               
             
           </h1>
@@ -299,8 +287,8 @@ requests.get(url, params=None, **kwargs">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-11T09:12:36+08:00">
-              2016-11-11
+            <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-11T14:50:10+08:00">
+              2017-02-11
             </time>
 
             &nbsp;|&nbsp;
@@ -308,8 +296,8 @@ requests.get(url, params=None, **kwargs">
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2017-02-08T11:03:07+08:00">
-              2017-02-08
+            <time title="Post modified" itemprop="dateModified" datetime="2017-02-11T16:37:07+08:00">
+              2017-02-11
             </time>
             
           </span>
@@ -323,8 +311,8 @@ requests.get(url, params=None, **kwargs">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">python学习笔记</span>
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
                   </a>
                 </span>
 
@@ -339,8 +327,8 @@ requests.get(url, params=None, **kwargs">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/11/Requests库简介/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/11/Requests库简介/" itemprop="commentCount"></span>
+                <a href="/2017/02/11/Intent学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/11/Intent学习笔记/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -350,7 +338,7 @@ requests.get(url, params=None, **kwargs">
 
           
           
-             <span id="/2016/11/11/Requests库简介/" class="leancloud_visitors" data-flag-title="Requests库简介">
+             <span id="/2017/02/11/Intent学习笔记/" class="leancloud_visitors" data-flag-title="Intent学习笔记">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -375,34 +363,50 @@ requests.get(url, params=None, **kwargs">
       
 
       
-        <p><a href="http://docs.python-requests.org/en/master/api/" target="_blank" rel="external">官方api链接</a></p>
-<h3 id="译文："><a href="#译文：" class="headerlink" title="译文："></a>译文：</h3><p>本文涵盖了Requests库所有的接口，对于一些依赖的外部库，本文中提供了最重要的一部分说明，并提供了规范文档的链接</p>
-<h4 id="主要接口"><a href="#主要接口" class="headerlink" title="主要接口"></a>主要接口</h4><ol>
-<li>requests.request(method, url, **kwargs) 构造并发送一个request请求</li>
-<li>requests.head(url, **kwargs)</li>
-<li>requests.get(url, params=None, **kwargs)</li>
-<li>requests.post(url, data=None, json=None, **kwargs)</li>
-<li>requests.put(url, data=None, **kwargs)</li>
-<li>requests.patch(url, data=None, **kwargs)</li>
-<li>requests.delete(url, **kwargs)</li>
-</ol>
-<p>参数：</p>
+        <h3 id="Intent是什么？"><a href="#Intent是什么？" class="headerlink" title="Intent是什么？"></a>Intent是什么？</h3><blockquote>
+<p>An intent is an abstract description of an operation to be performed.  It<br>can be used with {@link Context#startActivity(Intent) startActivity} to<br>launch an {@link android.app.Activity}, {@link android.content.Context#sendBroadcast(Intent) broadcastIntent} to<br>send it to any interested {@link BroadcastReceiver BroadcastReceiver} components, and {@link android.content.Context#startService} or {@link android.content.Context#bindService} to communicate with a background {@link android.app.Service}.</p>
+<p>An Intent provides a facility for performing late runtime binding between the code in different applications. Its most significant use is in the launching of activities, where it can be thought of as the glue between activities. It is basically a passive data structure holding an abstract description of an action to be performed.</p>
+</blockquote>
+<p>照例引用官方class annotation，Intent 作为将要执行的操作的一个抽象描述，来表达我们的一些意图，可以使用在applications，也可以使用在 Activity Service BroadcastReceiver组件上，来完成不同applications，或者不同组件之间的交互和通信。</p>
+<h3 id="Intent如何使用（着重在activity）？"><a href="#Intent如何使用（着重在activity）？" class="headerlink" title="Intent如何使用（着重在activity）？"></a>Intent如何使用（着重在activity）？</h3><p>Intent属性：</p>
 <ul>
-<li>method –请求方式</li>
-<li>url –请求地址</li>
-<li>params –（可选）查询参数</li>
-<li>data –(可选)请求body</li>
-<li>json –()请求body中的json</li>
-<li>headers –(可选)header头</li>
-<li>cookies –(可选)cookies</li>
-<li>files –(可选) 形式：{‘name:’, file-like-objects}，或者{‘name:’, file-tuple}，文件元组可以有3种形式{‘filename’, fileobj}, {‘filename’,fileobj,’content_type’}, {‘filename’, fileobj, ‘content_type’, custom_headers}</li>
-<li>auth –(可选)http认证方式</li>
-<li>timeout –(可选)链接超时</li>
-<li>allow_redirects –(可选)重定向</li>
-<li>verify –(可选)SSL验证，默认为true</li>
-<li>stream –(可选)如果false，response会被立刻下载</li>
-<li>cert –(可选)证书<br>Return: request.Response</li>
+<li>component：目的组件</li>
+<li>action：用来表现意图的行动</li>
+<li>category：用来表现动作的类别</li>
+<li>data：表示与动作要操纵的数据</li>
+<li>type：对于data范例的描写</li>
+<li>extras：扩展信息</li>
+<li>Flags：期望这个意图的运行模式</li>
 </ul>
+<p>Intent分为显式intent 和 隐式intent，区别在于隐式intent不指定component，而是让系统根据action,category等属性去自主决定启动哪个</p>
+<ol>
+<li>component 直接指明目的组件</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent();</div><div class="line"><span class="comment">//创建组件，通过组件来响应</span></div><div class="line">ComponentName component = <span class="keyword">new</span> ComponentName(context, SecondActivity.class);</div><div class="line">intent.setComponent(component); </div><div class="line"><span class="comment">//等价于</span></div><div class="line"><span class="comment">//intent.setClass(context, SecondActivity.class);</span></div><div class="line"><span class="comment">//等价于</span></div><div class="line"><span class="comment">//new Intent(context, SecondActivity.class);               </span></div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
+<p>上述写法的关键点都一样,都是声明package的name和目标组件class的name：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> Intent <span class="title">setClass</span><span class="params">(Context packageContext, Class&lt;?&gt; cls)</span> </span>&#123;</div><div class="line">    mComponent = <span class="keyword">new</span> ComponentName(packageContext, cls);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">ComponentName</span><span class="params">(Context pkg, Class&lt;?&gt; cls)</span> </span>&#123;</div><div class="line">    mPackage = pkg.getPackageName();</div><div class="line">    mClass = cls.getName();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>Action 用在Manifest文件中，在intent-filter指定intent能接受的动作</li>
+<li>Category 指明动作类别 和 Action 一起使用</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;activity android:name=".relaxYourEye.RelaxingYourEyeActivity"&gt;</div><div class="line">          &lt;intent-filter&gt;</div><div class="line">              &lt;action android:name="action" /&gt;</div><div class="line">              &lt;category android:name="android.intent.category.DEFAULT" /&gt;</div><div class="line">          &lt;/intent-filter&gt;</div><div class="line">      &lt;/activity&gt;</div><div class="line"></div><div class="line">      //在activity中使用</div><div class="line">      Intent intent = new Intent();</div><div class="line">      //intent.setClass(context, RelaxingYourEyeActivity.class);</div><div class="line">      intent.setAction("action");</div><div class="line">      startActivity(intent);</div></pre></td></tr></table></figure>
+<p>上述代码中 自定义action，必须配合默认的category，也就是说action和category必须都匹配上，才认为是匹配成功，如果有多个匹配成功，则系统会弹出给用户选择要运行的组件</p>
+<ol>
+<li>data 指定要操作的数据，常用在打开系统浏览器浏览网页</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW);</div><div class="line">intent.setData(Uri.parse(<span class="string">"http://www.baidu.com"</span>));                </div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
+<ol>
+<li>type 对于data类型的描述，常用于打开资源文件</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent();</div><div class="line">intent.setAction(Intent.ACTION_VIEW);</div><div class="line">Uri data = Uri.parse(<span class="string">"file:///storage/sdcard0/*.mp3"</span>);</div><div class="line"><span class="comment">//设置data+type属性</span></div><div class="line">intent.setDataAndType(data, <span class="string">"audio/mp3"</span>); </div><div class="line"><span class="comment">//方法：Intent </span></div><div class="line">android.content.Intent.setDataAndType(Uri data, String type)</div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
+<ol>
+<li>extras 扩展信息</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent();</div><div class="line">                intent.setClass(DownLoadImageActivity.<span class="keyword">this</span>, BigImageActivity.class);</div><div class="line">                Bundle bundle = <span class="keyword">new</span> Bundle();</div><div class="line">                bundle.putString(<span class="string">"url"</span>, url);</div><div class="line">                bundle.putString(<span class="string">"title"</span>, title);</div><div class="line">                intent.putExtras(bundle);</div></pre></td></tr></table></figure>
+<ol>
+<li>flags 启动模式（涉及内容复杂，单独在下一篇学习）</li>
+</ol>
+<p>拨打电话，发送短信等功能参考<a href="http://www.cnblogs.com/smyhvae/p/3959204.html" target="_blank" rel="external">intent解析</a></p>
 
       
     </div>
@@ -426,7 +430,7 @@ requests.get(url, params=None, **kwargs">
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"># python</a>
+            <a href="/tags/android/" rel="tag"># android</a>
           
         </div>
       
@@ -435,8 +439,8 @@ requests.get(url, params=None, **kwargs">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/17/随笔/" rel="next" title="随笔">
-                <i class="fa fa-chevron-left"></i> 随笔
+              <a href="/2017/02/10/sql学习笔记/" rel="next" title="sql学习笔记">
+                <i class="fa fa-chevron-left"></i> sql学习笔记
               </a>
             
           </div>
@@ -444,10 +448,6 @@ requests.get(url, params=None, **kwargs">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/08/handler学习笔记/" rel="prev" title="handler学习笔记">
-                handler学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -473,8 +473,8 @@ requests.get(url, params=None, **kwargs">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/11/Requests库简介/"
-           data-title="Requests库简介" data-url="http://yoursite.com/2016/11/11/Requests库简介/">
+      <div class="ds-thread" data-thread-key="2017/02/11/Intent学习笔记/"
+           data-title="Intent学习笔记" data-url="http://yoursite.com/2017/02/11/Intent学习笔记/">
       </div>
     
   </div>
@@ -571,7 +571,7 @@ requests.get(url, params=None, **kwargs">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#译文："><span class="nav-number">1.</span> <span class="nav-text">译文：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主要接口"><span class="nav-number">1.1.</span> <span class="nav-text">主要接口</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Intent是什么？"><span class="nav-number">1.</span> <span class="nav-text">Intent是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Intent如何使用（着重在activity）？"><span class="nav-number">2.</span> <span class="nav-text">Intent如何使用（着重在activity）？</span></a></li></ol></div>
             
 
           </div>

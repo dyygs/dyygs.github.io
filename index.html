@@ -249,6 +249,205 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/11/Intent学习笔记/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="dyygs">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/dhxy.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="dyygs的博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="dyygs的博客" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/11/Intent学习笔记/" itemprop="url">
+                  Intent学习笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-11T14:50:10+08:00">
+              2017-02-11
+            </time>
+
+            &nbsp;|&nbsp;
+
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-check-o"></i>
+            </span>
+            <time title="Post modified" itemprop="dateModified" datetime="2017-02-11T16:37:07+08:00">
+              2017-02-11
+            </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/11/Intent学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/11/Intent学习笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/02/11/Intent学习笔记/" class="leancloud_visitors" data-flag-title="Intent学习笔记">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Intent是什么？"><a href="#Intent是什么？" class="headerlink" title="Intent是什么？"></a>Intent是什么？</h3><blockquote>
+<p>An intent is an abstract description of an operation to be performed.  It<br>can be used with {@link Context#startActivity(Intent) startActivity} to<br>launch an {@link android.app.Activity}, {@link android.content.Context#sendBroadcast(Intent) broadcastIntent} to<br>send it to any interested {@link BroadcastReceiver BroadcastReceiver} components, and {@link android.content.Context#startService} or {@link android.content.Context#bindService} to communicate with a background {@link android.app.Service}.</p>
+<p>An Intent provides a facility for performing late runtime binding between the code in different applications. Its most significant use is in the launching of activities, where it can be thought of as the glue between activities. It is basically a passive data structure holding an abstract description of an action to be performed.</p>
+</blockquote>
+<p>照例引用官方class annotation，Intent 作为将要执行的操作的一个抽象描述，来表达我们的一些意图，可以使用在applications，也可以使用在 Activity Service BroadcastReceiver组件上，来完成不同applications，或者不同组件之间的交互和通信。</p>
+<h3 id="Intent如何使用（着重在activity）？"><a href="#Intent如何使用（着重在activity）？" class="headerlink" title="Intent如何使用（着重在activity）？"></a>Intent如何使用（着重在activity）？</h3><p>Intent属性：</p>
+<ul>
+<li>component：目的组件</li>
+<li>action：用来表现意图的行动</li>
+<li>category：用来表现动作的类别</li>
+<li>data：表示与动作要操纵的数据</li>
+<li>type：对于data范例的描写</li>
+<li>extras：扩展信息</li>
+<li>Flags：期望这个意图的运行模式</li>
+</ul>
+<p>Intent分为显式intent 和 隐式intent，区别在于隐式intent不指定component，而是让系统根据action,category等属性去自主决定启动哪个</p>
+<ol>
+<li>component 直接指明目的组件</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent();</div><div class="line"><span class="comment">//创建组件，通过组件来响应</span></div><div class="line">ComponentName component = <span class="keyword">new</span> ComponentName(context, SecondActivity.class);</div><div class="line">intent.setComponent(component); </div><div class="line"><span class="comment">//等价于</span></div><div class="line"><span class="comment">//intent.setClass(context, SecondActivity.class);</span></div><div class="line"><span class="comment">//等价于</span></div><div class="line"><span class="comment">//new Intent(context, SecondActivity.class);               </span></div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
+<p>上述写法的关键点都一样,都是声明package的name和目标组件class的name：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> Intent <span class="title">setClass</span><span class="params">(Context packageContext, Class&lt;?&gt; cls)</span> </span>&#123;</div><div class="line">    mComponent = <span class="keyword">new</span> ComponentName(packageContext, cls);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">ComponentName</span><span class="params">(Context pkg, Class&lt;?&gt; cls)</span> </span>&#123;</div><div class="line">    mPackage = pkg.getPackageName();</div><div class="line">    mClass = cls.getName();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>Action 用在Manifest文件中，在intent-filter指定intent能接受的动作</li>
+<li>Category 指明动作类别 和 Action 一起使用</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;activity android:name=".relaxYourEye.RelaxingYourEyeActivity"&gt;</div><div class="line">          &lt;intent-filter&gt;</div><div class="line">              &lt;action android:name="action" /&gt;</div><div class="line">              &lt;category android:name="android.intent.category.DEFAULT" /&gt;</div><div class="line">          &lt;/intent-filter&gt;</div><div class="line">      &lt;/activity&gt;</div><div class="line"></div><div class="line">      //在activity中使用</div><div class="line">      Intent intent = new Intent();</div><div class="line">      //intent.setClass(context, RelaxingYourEyeActivity.class);</div><div class="line">      intent.setAction("action");</div><div class="line">      startActivity(intent);</div></pre></td></tr></table></figure>
+<p>上述代码中 自定义action，必须配合默认的category，也就是说action和category必须都匹配上，才认为是匹配成功，如果有多个匹配成功，则系统会弹出给用户选择要运行的组件</p>
+<ol>
+<li>data 指定要操作的数据，常用在打开系统浏览器浏览网页</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW);</div><div class="line">intent.setData(Uri.parse(<span class="string">"http://www.baidu.com"</span>));                </div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
+<ol>
+<li>type 对于data类型的描述，常用于打开资源文件</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent();</div><div class="line">intent.setAction(Intent.ACTION_VIEW);</div><div class="line">Uri data = Uri.parse(<span class="string">"file:///storage/sdcard0/*.mp3"</span>);</div><div class="line"><span class="comment">//设置data+type属性</span></div><div class="line">intent.setDataAndType(data, <span class="string">"audio/mp3"</span>); </div><div class="line"><span class="comment">//方法：Intent </span></div><div class="line">android.content.Intent.setDataAndType(Uri data, String type)</div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
+<ol>
+<li>extras 扩展信息</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent();</div><div class="line">                intent.setClass(DownLoadImageActivity.<span class="keyword">this</span>, BigImageActivity.class);</div><div class="line">                Bundle bundle = <span class="keyword">new</span> Bundle();</div><div class="line">                bundle.putString(<span class="string">"url"</span>, url);</div><div class="line">                bundle.putString(<span class="string">"title"</span>, title);</div><div class="line">                intent.putExtras(bundle);</div></pre></td></tr></table></figure>
+<ol>
+<li>flags 启动模式（涉及内容复杂，单独在下一篇学习）</li>
+</ol>
+<p>拨打电话，发送短信等功能参考<a href="http://www.cnblogs.com/smyhvae/p/3959204.html" target="_blank" rel="external">intent解析</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/10/sql学习笔记/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1903,7 +2102,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
