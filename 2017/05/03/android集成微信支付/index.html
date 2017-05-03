@@ -84,16 +84,28 @@
 
 
 
-<meta name="description" content="保存图片到本地，并刷新图库123456789101112131415161718192021222324252627282930313233public class ImageUtil &amp;#123;    public static void saveImageToGallery(Context context, Bitmap bmp, String filePath) &amp;#123;">
+<meta name="description" content="前言：关于在android应用中集成微信支付，官方文档和网上的很多资料都已经说得很详细，写这篇文章的目的，主要是结合自己前一阵开发的实际经验，大体介绍下集成流程，并把过程中遇到的“坑”做一个记录，方便日后借鉴，详细的流程请参照官方开发文档。
+
+1. 微信整体接入流程
+Tips1: 应用包名在创建应用过程中，会填写应用的包名，比如cn.dy.www,那么微信支付完成的回调WXPayEntryAct">
 <meta property="og:type" content="article">
-<meta property="og:title" content="android 保存图片到本地">
-<meta property="og:url" content="http://yoursite.com/2017/02/13/android-保存图片到本地/index.html">
+<meta property="og:title" content="android集成微信支付">
+<meta property="og:url" content="http://yoursite.com/2017/05/03/android集成微信支付/index.html">
 <meta property="og:site_name" content="dyygs的博客">
-<meta property="og:description" content="保存图片到本地，并刷新图库123456789101112131415161718192021222324252627282930313233public class ImageUtil &amp;#123;    public static void saveImageToGallery(Context context, Bitmap bmp, String filePath) &amp;#123;">
-<meta property="og:updated_time" content="2017-02-13T02:47:03.000Z">
+<meta property="og:description" content="前言：关于在android应用中集成微信支付，官方文档和网上的很多资料都已经说得很详细，写这篇文章的目的，主要是结合自己前一阵开发的实际经验，大体介绍下集成流程，并把过程中遇到的“坑”做一个记录，方便日后借鉴，详细的流程请参照官方开发文档。
+
+1. 微信整体接入流程
+Tips1: 应用包名在创建应用过程中，会填写应用的包名，比如cn.dy.www,那么微信支付完成的回调WXPayEntryAct">
+<meta property="og:image" content="http://yoursite.com/微信支付整体接入流程.jpg">
+<meta property="og:image" content="http://yoursite.com/微信支付时序图.jpg">
+<meta property="og:updated_time" content="2017-05-03T02:51:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="android 保存图片到本地">
-<meta name="twitter:description" content="保存图片到本地，并刷新图库123456789101112131415161718192021222324252627282930313233public class ImageUtil &amp;#123;    public static void saveImageToGallery(Context context, Bitmap bmp, String filePath) &amp;#123;">
+<meta name="twitter:title" content="android集成微信支付">
+<meta name="twitter:description" content="前言：关于在android应用中集成微信支付，官方文档和网上的很多资料都已经说得很详细，写这篇文章的目的，主要是结合自己前一阵开发的实际经验，大体介绍下集成流程，并把过程中遇到的“坑”做一个记录，方便日后借鉴，详细的流程请参照官方开发文档。
+
+1. 微信整体接入流程
+Tips1: 应用包名在创建应用过程中，会填写应用的包名，比如cn.dy.www,那么微信支付完成的回调WXPayEntryAct">
+<meta name="twitter:image" content="http://yoursite.com/微信支付整体接入流程.jpg">
 
 
 
@@ -121,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/13/android-保存图片到本地/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/03/android集成微信支付/"/>
 
 
 
 
 
-  <title> android 保存图片到本地 | dyygs的博客 </title>
+  <title> android集成微信支付 | dyygs的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -248,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/13/android-保存图片到本地/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/03/android集成微信支付/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="dyygs">
@@ -272,7 +284,7 @@
             
             
               
-                android 保存图片到本地
+                android集成微信支付
               
             
           </h1>
@@ -284,8 +296,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-13T10:31:18+08:00">
-              2017-02-13
+            <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-03T09:49:37+08:00">
+              2017-05-03
             </time>
 
             &nbsp;|&nbsp;
@@ -293,8 +305,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2017-02-13T10:47:03+08:00">
-              2017-02-13
+            <time title="Post modified" itemprop="dateModified" datetime="2017-05-03T10:51:19+08:00">
+              2017-05-03
             </time>
             
           </span>
@@ -324,8 +336,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/02/13/android-保存图片到本地/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/13/android-保存图片到本地/" itemprop="commentCount"></span>
+                <a href="/2017/05/03/android集成微信支付/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/03/android集成微信支付/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -335,7 +347,7 @@
 
           
           
-             <span id="/2017/02/13/android-保存图片到本地/" class="leancloud_visitors" data-flag-title="android 保存图片到本地">
+             <span id="/2017/05/03/android集成微信支付/" class="leancloud_visitors" data-flag-title="android集成微信支付">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -360,7 +372,21 @@
       
 
       
-        <h3 id="保存图片到本地，并刷新图库"><a href="#保存图片到本地，并刷新图库" class="headerlink" title="保存图片到本地，并刷新图库"></a>保存图片到本地，并刷新图库</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImageUtil</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">saveImageToGallery</span><span class="params">(Context context, Bitmap bmp, String filePath)</span> </span>&#123;</div><div class="line">        <span class="comment">// 获取目标文件夹</span></div><div class="line">        File appDir = <span class="keyword">new</span> File(Environment.getExternalStorageDirectory(), filePath);</div><div class="line">        <span class="keyword">if</span> (!appDir.exists()) &#123;</div><div class="line">            appDir.mkdir();</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//根据当前时间生成图片名</span></div><div class="line">        String fileName = System.currentTimeMillis() + <span class="string">".jpg"</span>;</div><div class="line">        File file = <span class="keyword">new</span> File(appDir, fileName);</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(file);</div><div class="line">            bmp.compress(Bitmap.CompressFormat.JPEG, <span class="number">100</span>, fos);</div><div class="line">            fos.flush();</div><div class="line">            fos.close();</div><div class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 其次把文件插入到系统图库</span></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            MediaStore.Images.Media.insertImage(context.getContentResolver(),</div><div class="line">                    file.getAbsolutePath(), fileName, <span class="keyword">null</span>);</div><div class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 最后通知图库更新</span></div><div class="line">        context.sendBroadcast(<span class="keyword">new</span> Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse(<span class="string">"file://"</span> + appDir.getAbsolutePath())));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <blockquote>
+<p>前言：关于在android应用中集成微信支付，官方文档和网上的很多资料都已经说得很详细，写这篇文章的目的，主要是结合自己前一阵开发的实际经验，大体介绍下集成流程，并把过程中遇到的“坑”做一个记录，方便日后借鉴，详细的流程请参照<a href="https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_1" target="_blank" rel="external">官方开发文档</a>。</p>
+</blockquote>
+<h3 id="1-微信整体接入流程"><a href="#1-微信整体接入流程" class="headerlink" title="1. 微信整体接入流程"></a>1. 微信整体接入流程</h3><p><img src="微信支付整体接入流程.jpg" alt=""></p>
+<h4 id="Tips1-应用包名"><a href="#Tips1-应用包名" class="headerlink" title="Tips1: 应用包名"></a>Tips1: 应用包名</h4><p>在创建应用过程中，会填写应用的包名，比如cn.dy.www,那么微信支付完成的回调WXPayEntryActivity的完整路径必须要是cn.dy.www.wxapi. WXPayEntryActivity，否则微信会找不到回调的类</p>
+<h4 id="Tips2-应用签名"><a href="#Tips2-应用签名" class="headerlink" title="Tips2: 应用签名"></a>Tips2: 应用签名</h4><p>在创建应用过程中，会填写应用的签名，则在最终打包发布的app签名需要和填写的签名一直，不然也会直接返回支付失败</p>
+<h4 id="Tips3-商户简称"><a href="#Tips3-商户简称" class="headerlink" title="Tips3: 商户简称"></a>Tips3: 商户简称</h4><p>在申请微信支付功能时，会让填写商户资料，其中有一项是商户简称，该字段将在微信支付完成时向用户展示收款方信息，既是填写的商户简称，对此有要求的企业留意，否则后期修改生效就需要1周左右的工作日了。</p>
+<h3 id="2-微信支付时序图"><a href="#2-微信支付时序图" class="headerlink" title="2. 微信支付时序图"></a>2. 微信支付时序图</h3><p><img src="微信支付时序图.jpg" alt=""></p>
+<blockquote>
+<p>上图为参考官方时序图结合实际的业务场景修改后的支付时序图，请求预订单和业务的处理主要放在服务器去完成，客户端只负责通过sdk调起微信引导用户支付。</p>
+</blockquote>
+<h4 id="Tips4-接口中的随机字符串和签名"><a href="#Tips4-接口中的随机字符串和签名" class="headerlink" title="Tips4: 接口中的随机字符串和签名"></a>Tips4: 接口中的随机字符串和签名</h4><p>随机字符串和签名的目的主要是完成对传递参数的校验，可以在官方签名生成方法中看出来。所以，但凡涉及到参数传递，每次的随机数均需要重新生成，每次的签名也是针对本次传递的参数生成的签名，之前有试过采用微信返回的随机数或者签名去调起支付的失败经历。</p>
+<h4 id="Tips5-第二次调起的“bug”"><a href="#Tips5-第二次调起的“bug”" class="headerlink" title="Tips5: 第二次调起的“bug”"></a>Tips5: 第二次调起的“bug”</h4><p>在开发过程中，在跳转到微信app后，如果没有采取操作，直接按home键返回，或者是正常完成支付，目前android上会出现第二次调起支付，微信sdk直接返回-2(用户取消支付)的情景，尝试了其他如美团之类的，也是如此，在尝试与微信技术支持联系无果后，认为确实是一个小的”bug”，目前采取的是和美团一样的做法，直接提示用户已取消支付，让用户再点击一次。</p>
+<h4 id="Tips6-微信返回参数的“简洁”"><a href="#Tips6-微信返回参数的“简洁”" class="headerlink" title="Tips6: 微信返回参数的“简洁”"></a>Tips6: 微信返回参数的“简洁”</h4><p>微信支付回调的errCode主要有 0 :成功 -1:失败 -2:取消，所以在前期开发中会出现各种-1，然后没有任何错误提示的情况，原因主要是上边提到过的包名路径，应用签名及参数是否正确，逐个排查，基本问题就在这几个里边。</p>
+
       
     </div>
 
@@ -392,8 +418,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/11/Intent学习笔记/" rel="next" title="Intent学习笔记">
-                <i class="fa fa-chevron-left"></i> Intent学习笔记
+              <a href="/2017/02/24/Git学习笔记/" rel="next" title="Git学习笔记">
+                <i class="fa fa-chevron-left"></i> Git学习笔记
               </a>
             
           </div>
@@ -401,10 +427,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/15/Service学习笔记/" rel="prev" title="Service学习笔记">
-                Service学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -430,8 +452,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/13/android-保存图片到本地/"
-           data-title="android 保存图片到本地" data-url="http://yoursite.com/2017/02/13/android-保存图片到本地/">
+      <div class="ds-thread" data-thread-key="2017/05/03/android集成微信支付/"
+           data-title="android集成微信支付" data-url="http://yoursite.com/2017/05/03/android集成微信支付/">
       </div>
     
   </div>
@@ -528,7 +550,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#保存图片到本地，并刷新图库"><span class="nav-number">1.</span> <span class="nav-text">保存图片到本地，并刷新图库</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-微信整体接入流程"><span class="nav-number">1.</span> <span class="nav-text">1. 微信整体接入流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips1-应用包名"><span class="nav-number">1.1.</span> <span class="nav-text">Tips1: 应用包名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips2-应用签名"><span class="nav-number">1.2.</span> <span class="nav-text">Tips2: 应用签名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips3-商户简称"><span class="nav-number">1.3.</span> <span class="nav-text">Tips3: 商户简称</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-微信支付时序图"><span class="nav-number">2.</span> <span class="nav-text">2. 微信支付时序图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips4-接口中的随机字符串和签名"><span class="nav-number">2.1.</span> <span class="nav-text">Tips4: 接口中的随机字符串和签名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips5-第二次调起的“bug”"><span class="nav-number">2.2.</span> <span class="nav-text">Tips5: 第二次调起的“bug”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips6-微信返回参数的“简洁”"><span class="nav-number">2.3.</span> <span class="nav-text">Tips6: 微信返回参数的“简洁”</span></a></li></ol></li></ol></div>
             
 
           </div>
