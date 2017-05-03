@@ -297,7 +297,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2017-05-03T10:51:19+08:00">
+            <time title="Post modified" itemprop="dateModified" datetime="2017-05-03T11:02:21+08:00">
               2017-05-03
             </time>
             
@@ -369,11 +369,11 @@
             <blockquote>
 <p>前言：关于在android应用中集成微信支付，官方文档和网上的很多资料都已经说得很详细，写这篇文章的目的，主要是结合自己前一阵开发的实际经验，大体介绍下集成流程，并把过程中遇到的“坑”做一个记录，方便日后借鉴，详细的流程请参照<a href="https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_1" target="_blank" rel="external">官方开发文档</a>。</p>
 </blockquote>
-<h3 id="1-微信整体接入流程"><a href="#1-微信整体接入流程" class="headerlink" title="1. 微信整体接入流程"></a>1. 微信整体接入流程</h3><p><img src="微信支付整体接入流程.jpg" alt=""></p>
+<h3 id="1-微信整体接入流程"><a href="#1-微信整体接入流程" class="headerlink" title="1. 微信整体接入流程"></a>1. 微信整体接入流程</h3><p><img src="/img/微信支付整体接入流程.jpg" alt=""></p>
 <h4 id="Tips1-应用包名"><a href="#Tips1-应用包名" class="headerlink" title="Tips1: 应用包名"></a>Tips1: 应用包名</h4><p>在创建应用过程中，会填写应用的包名，比如cn.dy.www,那么微信支付完成的回调WXPayEntryActivity的完整路径必须要是cn.dy.www.wxapi. WXPayEntryActivity，否则微信会找不到回调的类</p>
 <h4 id="Tips2-应用签名"><a href="#Tips2-应用签名" class="headerlink" title="Tips2: 应用签名"></a>Tips2: 应用签名</h4><p>在创建应用过程中，会填写应用的签名，则在最终打包发布的app签名需要和填写的签名一直，不然也会直接返回支付失败</p>
 <h4 id="Tips3-商户简称"><a href="#Tips3-商户简称" class="headerlink" title="Tips3: 商户简称"></a>Tips3: 商户简称</h4><p>在申请微信支付功能时，会让填写商户资料，其中有一项是商户简称，该字段将在微信支付完成时向用户展示收款方信息，既是填写的商户简称，对此有要求的企业留意，否则后期修改生效就需要1周左右的工作日了。</p>
-<h3 id="2-微信支付时序图"><a href="#2-微信支付时序图" class="headerlink" title="2. 微信支付时序图"></a>2. 微信支付时序图</h3><p><img src="微信支付时序图.jpg" alt=""></p>
+<h3 id="2-微信支付时序图"><a href="#2-微信支付时序图" class="headerlink" title="2. 微信支付时序图"></a>2. 微信支付时序图</h3><p><img src="/img/微信支付时序图.jpg" alt=""></p>
 <blockquote>
 <p>上图为参考官方时序图结合实际的业务场景修改后的支付时序图，请求预订单和业务的处理主要放在服务器去完成，客户端只负责通过sdk调起微信引导用户支付。</p>
 </blockquote>
